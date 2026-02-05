@@ -88,3 +88,45 @@ CREATE TABLE rendeles_tetelek (
   FOREIGN KEY (rendeles_id) REFERENCES rendelesek(id)
     ON DELETE CASCADE
 );
+
+INSERT INTO meretek (meret) VALUES
+('EU 38'),
+('EU 39'),
+('EU 40'),
+('EU 41'),
+('EU 42'),
+('EU 43'),
+('EU 44'),
+('EU 45'),
+('EU 46'),
+('EU 47');
+
+
+
+INSERT INTO cipo_modellek (marka, modell, ar, leiras, kep_url) VALUES
+('Nike', 'Air Jordan 1 Retro High OG Chicago', 380, 'Ikonikus Jordan 1', NULL),
+('Nike', 'Air Jordan 1 Retro High OG Bred', 360, 'Bred colorway', NULL),
+('Nike', 'Air Jordan 4 Retro Military Black', 280, 'Jordan 4 Military Black', NULL),
+('Nike', 'Dunk Low Panda', 220, 'Fekete-fehér Dunk', NULL),
+('Nike', 'Air Force 1 Triple White', 120, 'Fehér AF1', NULL),
+('Adidas', 'Yeezy Boost 350 V2 Zebra', 260, 'Zebra Yeezy', NULL),
+('Adidas', 'Yeezy Boost 700 Wave Runner', 290, 'Wave Runner', NULL),
+('New Balance', '2002R Protection Pack Phantom', 220, 'Protection Pack', NULL);
+
+
+INSERT INTO keszlet (cipo_id, meret_id, mennyiseg) VALUES
+(1, 5, 3),
+(1, 7, 5),
+
+(2, 5, 2),
+(2, 7, 4),
+
+(3, 6, 6),
+(3, 7, 3),
+
+(4, 5, 10),
+(4, 7, 8),
+
+(5, 6, 12),
+(5, 7, 15);
+
