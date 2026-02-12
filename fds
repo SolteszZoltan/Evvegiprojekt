@@ -1,0 +1,71 @@
+
+const express = require("express");
+const mysql = require("mysql2");
+const cors = require("cors");
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+/* 🔌 MYSQL KAPCSOLAT */
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",          // <-- írd át ha más
+  password: "",          // <-- írd be a mysql jelszavad
+  database: "sneaker_shop"
+});
+
+db.connect(err => {
+  if (err) {
+    console.error("DB hiba:", err);
+    return;
+  }
+  console.log("MySQL csatlakozva");
+});
+
+/* 📦 ÖSSZES CIPŐ LISTÁZÁSA */
+app.get("/api/sneakers", (req, res) => {
+  const sql = `
+    SELECT 
+      c.id,
+      CONCAT(c.marka, ' ', c.modell) AS name,
+      c.ar AS price,
+      c.kep_url AS image,
+      c.leiras
+    FROM cipo_modellek c
+    WHERE c.aktiv = TRUE
+  `;
+
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send("DB hiba");
+      return;
+    }
+
+    res.json(results);
+  });
+});
+
+/* 📦 MÉRETEK + KÉSZLET */
+app.get("/api/sneakers/:id", (req, res) => {
+  const { id } = req.params;
+
+  const sql = `
+    SELECT 
+      m.meret,
+      k.mennyiseg
+    FROM keszlet k
+    JOIN meretek m ON m.id = k.meret_id
+    WHERE k.cipo_id = ?
+  `;
+
+  db.query(sql, [id], (err, results) => {
+    if (err) return res.status(500).send(err);
+    res.json(results);
+  });
+});
+
+app.listen(3000, () => {
+  console.log("API fut: http://localhost:3000");
+});
