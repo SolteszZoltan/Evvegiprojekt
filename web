@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SneakerShop</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --card: #181818;
+      --accent: #ffffff;
+      --muted: #a1a1a1;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 8%;
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      background: rgba(15,15,15,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    header h1 { font-weight: 800; letter-spacing: 1px; }
+
+    .search {
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: none;
+      width: 240px;
+      background: #222;
+      color: white;
+    }
+
+    .hero {
+      padding: 80px 8% 40px;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .hero p { color: var(--muted); }
+
+    .grid {
+      padding: 40px 8% 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 18px;
+    }
+
+    .card-body h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .price {
+      font-weight: 600;
+      margin: 10px 0;
+    }
+
+    .btn {
+      background: white;
+      color: black;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .btn:hover { opacity: 0.85; }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #222;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SNEAKERSHOP</h1>
+  <input class="search" placeholder="Keresés..." id="searchInput" />
+</header>
+
+<section class="hero">
+  <h2>Legújabb Sneakerek</h2>
+  <p>Prémium minőség. Limitált darabok. Gyors szállítás.</p>
+</section>
+
+<section class="grid" id="productGrid"></section>
+
+<footer>
+  © 2026 SneakerShop — Minden jog fenntartva.
+</footer>
+
+<script>
+  /*
+    🔌 ÁLLÍTSD BE A SAJÁT API URL-ED!
+    Ez fog csatlakozni a meglévő adatbázisodhoz.
+  */
+  const API_URL = "http://localhost:3000/api/sneakers";
+
+  let products = [];
+
+  async function loadProducts() {
+    try {
+      const res = await fetch(API_URL);
+      products = await res.json();
+      renderProducts(products);
+    } catch (err) {
+      console.error("API hiba:", err);
+      document.getElementById("productGrid").innerHTML = "<p>Nem sikerült betölteni a termékeket.</p>";
+    }
+  }
+
+  function renderProducts(items) {
+    const grid = document.getElementById("productGrid");
+    grid.innerHTML = "";
+
+    items.forEach(p => {
+      grid.innerHTML += `
+        <div class="card">
+          <img src="${p.image}" alt="${p.name}" />
+          <div class="card-body">
+            <h3>${p.name}</h3>
+            <p class="price">${p.price} Ft</p>
+            <button class="btn" onclick="addToCart(${p.id})">Kosárba</button>
+          </div>
+        </div>
+      `;
+    });
+  }
+
+  function addToCart(id) {
+    const product = products.find(p => p.id === id);
+    alert(`${product.name} hozzáadva a kosárhoz!`);
+  }
+
+  document.getElementById("searchInput").addEventListener("input", e => {
+    const value = e.target.value.toLowerCase();
+    const filtered = products.filter(p =>
+      p.name.toLowerCase().includes(value)
+    );
+    renderProducts(filtered);
+  });
+
+  loadProducts();
+</script>
+
+</body>
+</html>
