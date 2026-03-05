@@ -1,0 +1,515 @@
+/* ========================================
+   🎨 PRÓNYÓ KICKS - TELJES CSS
+   ======================================== */
+
+   body {
+    height: 100%;
+    width: 100vw;
+    margin: 0;
+    background: radial-gradient(ellipse farthest-corner at center top, #446CB3 0%, #22313F 100%);
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* ========================================
+   📍 NAVBAR
+   ======================================== */
+.navbar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 50px;
+    width: 100vw;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    z-index: 100;
+    top: 0;
+}
+
+/* ========================================
+   📍 LOGO
+   ======================================== */
+.logo {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.logo a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.hatter {
+    background-color: white;
+    height: 100%;
+    width: auto;
+    padding: 3px 8px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* ========================================
+   📍 KOSÁR IKON
+   ======================================== */
+.cart-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    transition: opacity 200ms ease;
+}
+
+.cart-container:hover {
+    opacity: 0.8;
+}
+
+.cart-desc {
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+.kosar {
+    text-decoration: none;
+    color: white;
+}
+
+.account-container {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+/* ========================================
+   📍 INFO BAR
+   ======================================== */
+.info-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 50px;
+    padding-top: 70px;
+    z-index: 1;
+}
+
+.shipping-container, .inventory-container {
+    display: flex;
+    align-items: center;
+}
+
+.inventory-container { 
+    margin-left: 80px; 
+}
+
+.info-wrapper .fa {
+    color: #fff;
+    margin-right: 10px;
+    transform: scale(0.9);
+}
+
+.info-desc {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* ========================================
+   📍 MAIN WRAPPER
+   ======================================== */
+.main-wrapper {
+    display: flex;
+    min-height: 450px;
+    padding: 20px;
+    padding-top: 100px;
+}
+
+/* ========================================
+   📍 MENU (Kék/Sötét szín visszaállítva)
+   ======================================== */
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 260px;
+    height: auto;
+    max-height: 80vh; /* ✅ Görgethetővé teszi ha sok elem van */
+    margin-top: 10px;
+    background: linear-gradient(to bottom, #3a404d, #181c26); /* ✅ Eredeti kék/sötét szín */
+    border-radius: 10px;
+    box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3);
+    overflow-y: auto; /* ✅ Scroll bar bekapcsolva */
+}
+
+/* Scrollbar stílusozása (opcionális, hogy szép legyen) */
+.menu::-webkit-scrollbar {
+    width: 8px;
+}
+.menu::-webkit-scrollbar-track {
+    background: #181c26; 
+    border-radius: 0 0 10px 10px;
+}
+.menu::-webkit-scrollbar-thumb {
+    background: #555; 
+    border-radius: 4px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    padding-right: 30px;
+    padding-left: 30px;
+    /* ✅ Visszaállítva az eredeti kék átmenetekre */
+    background: linear-gradient(0deg, #28406b, #2f4b7d); 
+    cursor: pointer;
+    transition: all 300ms;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.menu-item:nth-child(1) { border-radius: 10px 10px 0 0; }
+.menu-item:last-child { border-radius: 0 0 10px 10px; border-bottom: none; }
+
+.menu-item:hover { 
+    width: 107%;
+    background: linear-gradient(0deg, #3d61a1, #28406b);
+    z-index: 10;
+}
+
+.menu-item-title { 
+    display: flex; 
+    flex: 1; 
+    font-weight: 300;
+    color: #fff;
+}
+
+.menu-item-number {
+    width: 27px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: #555;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ========================================
+   📍 PRODUCTS
+   ======================================== */
+.products-container {
+    width: 100%;
+    min-height: 300px;
+    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.shop-card {
+    margin: 10px;
+    width: 280px;
+    height: 380px;
+    background: #f5f5f5;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #23211f;
+    display: flex;
+    flex-direction: column;
+}
+
+.shop-card .title {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 5px;
+    line-height: 1.2;
+    color: #28406b;
+}
+
+.shop-card .desc {
+    font-size: 13px;
+    opacity: .8;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    color: #555;
+}
+
+/* ========================================
+   📍 PRODUCT SLIDER (Kijavított pozicionálás)
+   ======================================== */
+.product {
+    margin: 10px 0;
+    position: relative;
+    width: 100%;
+    height: 200px; /* Fix magasság a képeknek */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background: #fff; /* Fehér háttér a képek mögé */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.product .slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: crosshair;
+}
+
+.product .sneaker_img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* ✅ Fontos: transzformáció középre igazításhoz */
+    transform: translate(-50%, -50%); 
+    width: 85%; /* Kicsit kisebb, hogy ne lógjon ki */
+    max-height: 85%;
+    object-fit: contain; /* ✅ Ez garantálja, hogy ne torzuljon */
+    transition: transform 300ms ease, box-shadow 300ms ease, opacity 300ms ease;
+    border-radius: 5px;
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Az első kép alapból látszik */
+.product .sneaker_img:first-child {
+    opacity: 1;
+    z-index: 10;
+}
+
+.product .sneaker_img.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+.product .slides:hover .sneaker_img.active {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+@keyframes fade {
+    0% { 
+        opacity: 0; 
+        transform: translate(-50%, -50%) scale(0.95); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) scale(1); 
+    }
+}
+
+/* ========================================
+   📍 CTA (Add to cart gomb)
+   ======================================== */
+.cta {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.price {
+    color: #28406b;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.button {
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #28406b;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 300ms;
+    border: 1px solid #28406b;
+    border-radius: 20px;
+    background: none;
+    outline: none;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #3d61a1, #28406b);
+    color: #fff;
+    border: none;
+}
+
+/* ========================================
+   📍 BLOG / FOOTER SECTION
+   ======================================== */
+.blog {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 50px 0;
+    margin-top: 20px;
+}
+
+.blog .hatter {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px 30px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.blog .masikoldal {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.blog .masikoldal:hover {
+    color: #e0574f;
+    text-shadow: 0 0 10px rgba(224, 87, 79, 0.7);
+}
+
+.blog .fas {
+    color: #e0574f;
+    transition: transform 0.3s ease;
+}
+
+.blog:hover .fas {
+    transform: translateX(5px);
+}
+
+/* ========================================
+   📍 MODAL STÍLUSOK
+   ======================================== */
+.modal {
+    position: fixed;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    background: linear-gradient(135deg, #28406b, #3d61a1);
+    border-radius: 12px 12px 0 0;
+    padding: 20px;
+    box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    transition: bottom 0.4s ease-in-out;
+    z-index: 1000;
+}
+
+.modal.active {
+    bottom: 0;
+}
+
+.modal div {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-align: center;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.modal div:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* ========================================
+   📍 KOSÁR SZÁMLÁLÓ
+   ======================================== */
+#cart-count {
+    font-weight: 700;
+    color: #e0574f;
+    margin: 0 2px;
+}
+
+/* ========================================
+   📍 RESPONSIVE - MOBIL NÉZET
+   ======================================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px;
+    }
+    
+    .main-wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 120px;
+    }
+    
+    .menu {
+        min-width: 100%;
+        max-height: 300px;
+        margin-bottom: 20px;
+    }
+    
+    .menu-item {
+        height: 45px;
+        padding: 10px 20px;
+    }
+    
+    .products-container {
+        margin-left: 0;
+        justify-content: center;
+    }
+    
+    .shop-card {
+        width: 90%;
+        max-width: 320px;
+        height: 400px;
+    }
+    
+    .product {
+        height: 200px;
+    }
+    
+    .info-wrapper {
+        flex-direction: column;
+        height: auto;
+        padding: 60px 10px 20px 10px;
+        gap: 15px;
+    }
+    
+    .inventory-container {
+        margin-left: 0;
+    }
+    
+    .modal {
+        width: 95%;
+        grid-template-columns: 1fr;
+    }
+}

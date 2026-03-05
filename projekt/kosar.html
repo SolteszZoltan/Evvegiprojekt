@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kosár - Prónyó Kicks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="kosar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="kosar.js" defer></script>
+</head>
+<body>
+   
+<div class="site_wrapper kosar-wrapper">
+   
+    <div class="logo hatter">
+        <a href="index.html"><img src="logo.png" alt="logo"></a>
+    </div>
+   
+    <nav class="kosar-nav">
+        <a href="index.html" class="masikoldal">← Vissza a főoldalra</a>
+        <a href="cipok.html" class="masikoldal">Termékek böngészése</a>
+        <!-- Kosár ikon itt is frissül -->
+        <a href="kosar.html" class='cart-container'>
+            <i class="fa fa-shopping-cart"></i>
+            <div class='cart-desc'><span>🛒 <span id="cart-count">0</span> items</span></div>
+        </a>
+    </nav>
+
+    <section class="kosar-header">
+        <h1>🛒 A kosarad tartalma</h1>
+        <p class="kosar-subtitle">Összesítsük, mit választottál!</p>
+    </section>
+
+    <!-- Üres kosár üzenet -->
+    <div id="empty-cart" class="empty-cart hidden">
+        <p>😔 A kosarad jelenleg üres.</p>
+        <a href="cipok.html" class="cta_button">Böngéssz termékeink között</a>
+    </div>
+
+    <!-- Termékek listája -->
+    <div id="cart-items" class="cart-items"></div>
+
+    <!-- Összesítés -->
+    <section class="cart-summary">
+        <div class="summary-row">
+            <span>Részösszeg:</span>
+            <span id="subtotal">0 Ft</span>
+        </div>
+        <div class="summary-row">
+            <span>Szállítás:</span>
+            <span id="shipping">Ingyenes</span>
+        </div>
+        <div class="summary-row total">
+            <span><strong>Végösszeg:</strong></span>
+            <span><strong id="total">0 Ft</strong></span>
+        </div>
+        <button id="checkout-btn" class="cta_button checkout">Megrendelés leadása</button>
+    </section>
+
+</div>
+</body>
+</html>

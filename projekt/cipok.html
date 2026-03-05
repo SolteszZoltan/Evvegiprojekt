@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipők - Prónyó Kicks</title>
+    <link rel="stylesheet" href="cipok.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="cipok.js" defer></script>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <div class='navbar'>
+        <div class='logo'>
+            <a href="index.html"><img src="logo.png" alt="logo" class="hatter"></a>
+        </div>
+        <div class='account-container'>
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+        <a href="kosar.html" class='cart-container'>
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <div class='cart-desc'><span class="kosar">🛒 <span id="cart-count">0</span> items</span></div>
+        </a>
+    </div>
+
+    <!-- INFO BAR -->
+    <div class='info-wrapper'>
+        <div class='shipping-container'>
+            <i class="fa fa-truck fa-2x"></i>
+            <div class='info-desc'>Free shipping</div>
+        </div>
+        <div class='inventory-container'>
+            <i class="fa fa-shopping-basket fa-2x"></i>
+            <div class='info-desc'>Largest online inventory</div>
+        </div>
+    </div>
+
+    <!-- MAIN WRAPPER -->
+    <div class='main-wrapper'>
+        <!-- MENU -->
+        <div class="menu">
+            <div class='menu-item' data-category='Adidas'>
+                <div class='menu-item-title'>Adidas</div>
+                <div class='menu-item-number'>15</div>
+            </div>
+            <div class='menu-item' data-category='Nike'>
+                <div class='menu-item-title'>Nike</div>
+                <div class='menu-item-number'>40</div>
+            </div>
+            <div class='menu-item' data-category='Jordan'>
+                <div class='menu-item-title'>Jordan</div>
+                <div class='menu-item-number'>50</div>
+            </div>
+            <div class='menu-item' data-category='Vans'>
+                <div class='menu-item-title'>Vans</div>
+                <div class='menu-item-number'>10</div>
+            </div>
+            <div class='menu-item' data-category='Converse'>
+                <div class='menu-item-title'>Converse</div>
+                <div class='menu-item-number'>10</div>
+            </div>
+            <div class='menu-item' data-category='Balenciaga'>
+                <div class='menu-item-title'>Balenciaga</div>
+                <div class='menu-item-number'>10</div>
+            </div>
+            <div class='menu-item' data-category='Louis Vuitton'>
+                <div class='menu-item-title'>Louis Vuitton</div>
+                <div class='menu-item-number'>3</div>
+            </div>
+            <div class='menu-item' data-category='Dior'>
+                <div class='menu-item-title'>Dior</div>
+                <div class='menu-item-number'>3</div>
+            </div>
+            <div class='menu-item' data-category='Gucci'>
+                <div class='menu-item-title'>Gucci</div>
+                <div class='menu-item-number'>10</div>
+            </div>
+        </div>
+
+        <!-- PRODUCTS CONTAINER -->
+        <div class='products-container'>
+
+            <!-- Adidas Yeezy Boost 350 V2 Zebra -->
+            <div class='shop-card' data-cat='Adidas'>
+                <div class="title">Yeezy Boost 350 V2 Zebra</div>
+                <div class="desc">2017 Release - Iconic white/black</div>
+                <div class="product">
+                    <div class="slides">
+                        <img src="https://images.unsplash.com/photo-1584735175315-9d5df2a770e8?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&h=400&fit=crop" class="sneaker_img">
+                    </div>
+                </div>
+                <div class='cta'>
+                    <div class="price">$220</div>
+                    <button class="button">Add to cart</button>
+                </div>
+            </div>
+
+            <!-- Adidas Yeezy Boost 350 V2 Beluga 2.0 -->
+            <div class='shop-card' data-cat='Adidas'>
+                <div class="title">Yeezy Boost 350 V2 Beluga 2.0</div>
+                <div class="desc">2017 Release - Grey/Orange</div>
+                <div class="product">
+                    <div class="slides">
+                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=500&h=400&fit=crop" class="sneaker_img">
+                    </div>
+                </div>
+                <div class='cta'>
+                    <div class="price">$230</div>
+                    <button class="button">Add to cart</button>
+                </div>
+            </div>
+
+            <!-- Adidas Yeezy Boost 700 Wave Runner -->
+            <div class='shop-card' data-cat='Adidas'>
+                <div class="title">Yeezy Boost 700 Wave Runner</div>
+                <div class="desc">2017 Release - The OG Dad Shoe</div>
+                <div class="product">
+                    <div class="slides">
+                        <img src="https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=400&fit=crop" class="sneaker_img">
+                    </div>
+                </div>
+                <div class='cta'>
+                    <div class="price">$300</div>
+                    <button class="button">Add to cart</button>
+                </div>
+            </div>
+
+            <!-- Adidas Yeezy Boost 700 V2 Static -->
+            <div class='shop-card' data-cat='Adidas'>
+                <div class="title">Yeezy Boost 700 V2 Static</div>
+                <div class="desc">2018 Release - Reflective Grey</div>
+                <div class="product">
+                    <div class="slides">
+                        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1584735175315-9d5df2a770e8?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&h=400&fit=crop" class="sneaker_img">
+                    </div>
+                </div>
+                <div class='cta'>
+                    <div class="price">$300</div>
+                    <button class="button">Add to cart</button>
+                </div>
+            </div>
+
+            <!-- Nike Air Force 1 Low White -->
+            <div class='shop-card' data-cat='Nike'>
+                <div class="title">Air Force 1 Low White '07</div>
+                <div class="desc">Classic White - Timeless Design</div>
+                <div class="product">
+                    <div class="slides">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=400&fit=crop" class="sneaker_img">
+                    </div>
+                </div>
+                <div class='cta'>
+                    <div class="price">$110</div>
+                    <button class="button">Add to cart</button>
+                </div>
+            </div>
+
+            <!-- Nike Dunk Low Panda -->
+            <div class='shop-card' data-cat='Nike'>
+                <div class="title">Dunk Low Panda</div>
+                <div class="desc">Black/White - Popular Colorway</div>
+                <div class="product">
+                    <div class="slides">
+                        <img src="https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&h=400&fit=crop" class="sneaker_img">
+                    </div>
+                </div>
+                <div class='cta'>
+                    <div class="price">$150</div>
+                    <button class="button">Add to cart</button>
+                </div>
+            </div>
+
+            <!-- Jordan 1 High Chicago -->
+            <div class='shop-card' data-cat='Jordan'>
+                <div class="title">Jordan 1 High Chicago</div>
+                <div class="desc">2015 Release - Iconic Red/White/Black</div>
+                <div class="product">
+                    <div class="slides">
+                        <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=500&h=400&fit=crop" class="sneaker_img">
+                    </div>
+                </div>
+                <div class='cta'>
+                    <div class="price">$450</div>
+                    <button class="button">Add to cart</button>
+                </div>
+            </div>
+
+            <!-- Jordan 4 Bred -->
+            <div class='shop-card' data-cat='Jordan'>
+                <div class="title">Jordan 4 Bred</div>
+                <div class="desc">2019 Release - Black/Red/Cement</div>
+                <div class="product">
+                    <div class="slides">
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=500&h=400&fit=crop" class="sneaker_img">
+                    </div>
+                </div>
+                <div class='cta'>
+                    <div class="price">$400</div>
+                    <button class="button">Add to cart</button>
+                </div>
+            </div>
+
+            <!-- Vans Old Skool Black White -->
+            <div class='shop-card' data-cat='Vans'>
+                <div class="title">Vans Old Skool Black White</div>
+                <div class="desc">Classic Skate Shoe - Iconic Stripe</div>
+                <div class="product">
+                    <div class="slides">
+                        <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1584735175315-9d5df2a770e8?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&h=400&fit=crop" class="sneaker_img">
+                        <img src="https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=500&h=400&fit=crop" class="sneaker_img">
+                    </div>
+                </div>
+                <div class='cta'>
+                    <div class="price">$65</div>
+                    <button class="button">Add to cart</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Blog section -->
+    <article class="blog">
+        <h2 class="hatter"><a href="index.html" class="masikoldal">pronyó kicks</a> <i class="fas fa-caret-right"></i></h2>
+    </article>
+    
+    <div class='modal'>
+        <div>asdasdas asd as </div>
+        <div>asdasdas asd as </div>
+        <div>asdasdas asd as </div>
+        <div>asdasdas asd as </div>
+    </div>
+
+</body>
+</html>
