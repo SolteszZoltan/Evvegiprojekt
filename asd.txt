@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        body { font-family: Arial; margin: 0; display: flex; }
+        .sidebar { width: 200px; background: #2c3e50; color: white; height: 100vh; padding: 20px; }
+        .sidebar button { width: 100%; margin: 10px 0; padding: 10px; border: none; background: #34495e; color: white; cursor: pointer; }
+        .sidebar button:hover { background: #1abc9c; }
+        .content { flex: 1; padding: 20px; }
+        .section { display: none; }
+        .active { display: block; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 8px; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Admin</h2>
+    <button onclick="showSection('raktar'); loadRaktar()">Raktár</button>
+    <button onclick="showSection('rendelesek')">Rendelések</button>
+    <button onclick="showSection('forgalom')">Forgalom</button>
+</div>
+
+<div class="content">
+    <div id="raktar" class="section active">
+        <h1>Raktár</h1>
+        <table id="raktarTable">
+            <thead>
+                <tr>
+                    <th>Név</th>
+                    <th>Mennyiség</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="rendelesek" class="section">
+        <h1>Rendelések</h1>
+    </div>
+
+    <div id="forgalom" class="section">
+        <h1>Forgalom</h1>
+    </div>
+</div>
+
+<script>
+function showSection(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
+async function loadRaktar() {
+    try {
+        const res = await fetch('http://localhost:3000/api/raktar');
+        const data = await res.json();
+
+        const tbody = document.querySelector('#raktarTable tbody');
+        tbody.innerHTML = '';
+
+        data.forEach(item => {
+            tbody.innerHTML += `<tr><td>${item.nev}</td><td>${item.mennyiseg}</td></tr>`;
+        });
+    } catch (err) {
+        console.error(err);
+        alert('Nem sikerült betölteni az adatokat');
+    }
+}
+
+loadRaktar();
+</script>
+
+</body>
+</html>
+
+<!-- ================= BACKEND (Node.js) =================
+
+1. Telepítés:
+npm init -y
+npm install express mysql cors
+
+2. server.js:
+
+const express = require('express');
+const mysql = require('mysql');
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
+
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'adatbazis_nev'
+});
+
+db.connect(err => {
+    if (err) throw err;
+    console.log('MySQL csatlakozva');
+});
+
+app.get('/api/raktar', (req, res) => {
+    db.query('SELECT nev, mennyiseg FROM raktar', (err, results) => {
+        if (err) throw err;
+        res.json(results);
+    });
+});
+
+app.listen(3000, () => console.log('Szerver fut: http://localhost:3000'));
+
+3. Indítás:
+node server.js
+
+4. MySQL tábla:
+
+CREATE TABLE raktar (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nev VARCHAR(255),
+    mennyiseg INT
+);
+
+======================================================== -->
