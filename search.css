@@ -1,0 +1,90 @@
+/* ========================================
+   🔍 KERESŐ STÍLUSOK - add hozzá a cipok.css-hez
+   ======================================== */
+
+/* Navbar form pozicionálás */
+.account-container {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
+}
+
+.account-container form {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 8px 16px;
+    width: 100%;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    position: relative;
+}
+
+.account-container form:focus-within {
+    border-color: #F8D800;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.account-container form .fa-search {
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 10px;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.account-container form:focus-within .fa-search {
+    color: #F8D800;
+}
+
+.search {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'IBM Plex Mono', 'Open Sans', sans-serif;
+    font-size: 13px;
+    min-width: 0;
+}
+
+.search::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+/* Találat badge */
+#search-result-badge {
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+}
+
+/* Nincs találat üzenet */
+#no-results-msg {
+    width: 100%;
+    margin-left: 20px;
+    padding: 60px 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Kiemelés */
+mark {
+    background: #F8D800 !important;
+    color: #000 !important;
+    border-radius: 3px;
+    padding: 0 3px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .account-container {
+        max-width: 100%;
+        margin: 5px 0;
+        order: 3;
+        width: 100%;
+    }
+}

@@ -1,0 +1,54 @@
+/* ========================================
+   👟 MÉRETEK MEGJELENÍTÉSE - KÁRTYÁKON
+   Add hozzá a cipok.css végéhez
+   ======================================== */
+
+.card-sizes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 6px 0 4px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin-top: 4px;
+}
+
+.card-sizes-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    font-family: 'IBM Plex Mono', 'Open Sans', monospace;
+}
+
+.card-sizes-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.card-size-tag {
+    display: inline-block;
+    padding: 2px 7px;
+    background: #eef1f7;
+    color: #28406b;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'IBM Plex Mono', monospace;
+    border: 1px solid #d0d8eb;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.card-size-tag:hover {
+    background: #28406b;
+    color: #fff;
+    border-color: #28406b;
+    cursor: default;
+}
+
+/* Ha a kártya magassága nem elég, kicsit növeljük */
+.shop-card {
+    height: auto !important;
+    min-height: 380px;
+}
