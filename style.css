@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,500,700');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    margin: 10px;
+    background: radial-gradient(ellipse farthest-corner at center top, #446CB3 0%, #22313F 100%);
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.site_wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-gap: 0.5%;
+    grid-template-columns: 150px repeat(3, minmax(250px, 1fr));
+    grid-template-rows: 100px repeat(3, 1fr);
+}
+
+/* ✅ JAVÍTVA: Logo border eltávolítva */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; ❌ EZT KIVETTÜK */
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo:hover {
+    text-shadow: 1px 1px #F8D800, 2px 2px #F8D800, 3px 3px #F8D800, 4px 4px #F8D800;
+}
+
+form {
+    grid-column: 2 / -1;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    flex: 1;
+    margin-left: 10px;
+    border: none;
+    font-family: IBM Plex Mono;
+}
+
+.search::placeholder {
+    color: rgba(0,0,0,0.4);
+}
+
+.grid_item1 { grid-column: 2 / 3; grid-row: 2 / 4; }
+.grid_item2 { grid-column: 3 / 4; grid-row: 2 / 4; }
+.grid_item3 { grid-column: 4 / -1; grid-row: 2 / 4; }
+
+.grid_item1, .grid_item2, .grid_item3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 75px 50px auto .2fr;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.8rem;
+    align-self: center;
+}
+
+.blog {
+    grid-column: 2 / -1;
+    grid-row: 4 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.blog h2 {
+    border: 1px solid black;
+    padding: 10px 40px;
+    letter-spacing: 2px;
+    transition: transform 200ms ease, box-shadow 200ms ease, text-shadow 200ms ease;
+}
+
+.blog h2:hover {
+    box-shadow: 4px 4px .2px rgba(0,0,0,1);
+    transform: translateX(-5px) translateY(-3px);
+    cursor: crosshair;
+    text-shadow: 1px 1px #F8D800, 2px 2px #F8D800, 3px 3px #F8D800, 4px 4px #F8D800, 5px 5px #F8D800;
+}
+
+.slides {
+    grid-column: 1 / -1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.sneaker_img {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.sneaker_img:hover {
+    cursor: crosshair;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.fc4D, .offWhite, .vans {
+    background-color: rgba(255,255,255,0.8);
+    border: 1px solid black;
+}
+
+.fc4D:first-child, .offWhite:first-child, .vans:first-child {
+    z-index: 1;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.cta_button {
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
+    cursor: crosshair;
+    color: #fff;
+    font-weight: bold;
+    height: 50px;
+    text-transform: uppercase;
+    font-family: IBM Plex Mono;
+    align-self: center;
+    transition: transform 200ms ease, box-shadow 200ms ease, background-color 500ms ease;
+    text-decoration: none;
+}
+
+.cta_button:hover {
+    box-shadow: 4px 4px .2px rgba(0,0,0,1);
+    transform: translateX(-5px) translateY(-3px);
+    background-color: #22313F;
+}
+
+.masikoldal {
+    text-decoration: none;
+    color: black;
+}
+
+.hatter {
+    background-color: white;
+}

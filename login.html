@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bejelentkezés - Prónyó Kicks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Open+Sans:wght@300;400;700;900&display=swap');
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(ellipse farthest-corner at center top, #446CB3 0%, #22313F 100%);
+            font-family: 'Open Sans', sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Háttér dekor körök */
+        body::before {
+            content: '';
+            position: fixed;
+            width: 600px; height: 600px;
+            border-radius: 50%;
+            background: rgba(68, 108, 179, 0.15);
+            top: -200px; right: -200px;
+            pointer-events: none;
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            width: 400px; height: 400px;
+            border-radius: 50%;
+            background: rgba(248, 216, 0, 0.05);
+            bottom: -100px; left: -100px;
+            pointer-events: none;
+        }
+
+        /* LOGO */
+        .logo-wrapper {
+            margin-bottom: 30px;
+            text-align: center;
+            animation: fadeDown 0.6s ease both;
+        }
+
+        .logo-wrapper img {
+            height: 60px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+        }
+
+        .logo-text {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #F8D800;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+            margin-top: 8px;
+        }
+
+        /* KÁRTYA */
+        .login-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 40px 45px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05);
+            animation: fadeUp 0.7s ease 0.1s both;
+        }
+
+        .card-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .card-sub {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            margin-bottom: 30px;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        /* TABS */
+        .tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 28px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 10px;
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.5);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .tab-btn.active {
+            background: #F8D800;
+            color: #000;
+        }
+
+        .tab-btn:not(.active):hover {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+
+        /* FORM */
+        .form-section { display: none; }
+        .form-section.active { display: block; }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.75rem;
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.7;
+            margin-bottom: 7px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.4;
+            font-size: 0.9rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 14px 12px 40px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+
+        input:focus {
+            border-color: #F8D800;
+            background: rgba(255,255,255,0.12);
+        }
+
+        input::placeholder { color: rgba(255,255,255,0.25); }
+
+        /* Jelszó toggle */
+        .toggle-pw {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.4);
+            cursor: pointer;
+            padding: 0;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .toggle-pw:hover { color: #F8D800; }
+
+        /* HIBA / SIKER üzenet */
+        .msg {
+            padding: 10px 14px;
+            border-radius: 7px;
+            font-size: 0.82rem;
+            font-family: 'IBM Plex Mono', monospace;
+            margin-bottom: 16px;
+            display: none;
+        }
+        .msg.error { background: rgba(224, 87, 79, 0.2); border: 1px solid rgba(224,87,79,0.5); color: #ff8a85; }
+        .msg.success { background: rgba(46, 204, 113, 0.2); border: 1px solid rgba(46,204,113,0.5); color: #7fffc4; }
+        .msg.show { display: block; }
+
+        /* SUBMIT GOMB */
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: #F8D800;
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            margin-top: 6px;
+        }
+
+        .submit-btn:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(248, 216, 0, 0.3);
+        }
+
+        .submit-btn:active { transform: translateY(0); }
+
+        /* ELVÁLASZTÓ */
+        .divider {
+            text-align: center;
+            margin: 22px 0 0;
+            font-size: 0.78rem;
+            opacity: 0.5;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .divider a {
+            color: #F8D800;
+            text-decoration: none;
+            opacity: 1;
+        }
+
+        /* Vissza link */
+        .back-link {
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            animation: fadeUp 0.8s ease 0.2s both;
+        }
+
+        .back-link a {
+            color: #F8D800;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .back-link a:hover { opacity: 0.8; }
+
+        /* ANIMÁCIÓK */
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Bejelentkezett állapot */
+        .logged-in-box {
+            display: none;
+            text-align: center;
+        }
+
+        .logged-in-box .avatar {
+            width: 70px; height: 70px;
+            background: #F8D800;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #000;
+            margin: 0 auto 16px;
+        }
+
+        .logged-in-box h2 {
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin-bottom: 6px;
+        }
+
+        .logged-in-box p {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            font-family: 'IBM Plex Mono', monospace;
+            margin-bottom: 24px;
+        }
+
+        .btn-group { display: flex; flex-direction: column; gap: 10px; }
+
+        .btn-outline {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .btn-logout {
+            background: rgba(224, 87, 79, 0.15);
+            border-color: rgba(224, 87, 79, 0.4);
+            color: #ff8a85;
+        }
+        .btn-logout:hover { background: rgba(224, 87, 79, 0.3); }
+
+        @media (max-width: 480px) {
+            .login-card { padding: 30px 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-wrapper">
+        <img src="logo.png" alt="Prónyó Kicks logo" onerror="this.style.display='none'">
+        <div class="logo-text">Prónyó Kicks</div>
+    </div>
+
+    <div class="login-card" id="loginCard">
+
+        <!-- BEJELENTKEZVE nézet -->
+        <div class="logged-in-box" id="loggedInBox">
+            <div class="avatar" id="avatarLetter">P</div>
+            <h2 id="welcomeName">Üdv, visszatértél!</h2>
+            <p id="welcomeEmail">user@email.com</p>
+            <div class="btn-group">
+                <a href="index.html" class="submit-btn" style="display:block;text-align:center;text-decoration:none;">Cipők böngészése</a>
+                <a href="kosar.html" class="btn-outline">🛒 Kosár megtekintése</a>
+                <button class="btn-outline btn-logout" id="logoutBtn">Kijelentkezés</button>
+            </div>
+        </div>
+
+        <!-- BEJELENTKEZÉS / REGISZTRÁCIÓ nézet -->
+        <div id="authBox">
+            <div class="card-title">Belépés</div>
+            <div class="card-sub">// hozzáférés a fiókodhoz</div>
+
+            <div class="tabs">
+                <button class="tab-btn active" id="tabLogin" onclick="switchTab('login')">Bejelentkezés</button>
+                <button class="tab-btn" id="tabRegister" onclick="switchTab('register')">Regisztráció</button>
+            </div>
+
+            <!-- BEJELENTKEZÉS FORM -->
+            <div class="form-section active" id="formLogin">
+                <div class="msg error" id="loginError"></div>
+                <div class="form-group">
+                    <label>E-mail cím</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="loginEmail" placeholder="pelda@email.com" autocomplete="email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Jelszó</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password">
+                        <button class="toggle-pw" onclick="togglePw('loginPassword', this)" tabindex="-1">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <button class="submit-btn" onclick="doLogin()">Bejelentkezés →</button>
+                <div class="divider">Még nincs fiókod? <a href="#" onclick="switchTab('register');return false;">Regisztrálj!</a></div>
+            </div>
+
+            <!-- REGISZTRÁCIÓ FORM -->
+            <div class="form-section" id="formRegister">
+                <div class="msg error" id="registerError"></div>
+                <div class="msg success" id="registerSuccess"></div>
+                <div class="form-group">
+                    <label>Teljes név</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="regName" placeholder="Nagy János" autocomplete="name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>E-mail cím</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="regEmail" placeholder="pelda@email.com" autocomplete="email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Jelszó</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="regPassword" placeholder="min. 6 karakter" autocomplete="new-password">
+                        <button class="toggle-pw" onclick="togglePw('regPassword', this)" tabindex="-1">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Jelszó megerősítése</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="regPassword2" placeholder="••••••••" autocomplete="new-password">
+                    </div>
+                </div>
+                <button class="submit-btn" onclick="doRegister()">Regisztráció →</button>
+                <div class="divider">Már van fiókod? <a href="#" onclick="switchTab('login');return false;">Jelentkezz be!</a></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="back-link">
+        <a href="index.html">← Vissza a termékekhez</a>
+    </div>
+
+    <script>
+        // ─── SEGÉDFÜGGVÉNYEK ───────────────────────────────────────
+
+        function getUsers() {
+            return JSON.parse(localStorage.getItem('pronyo_users') || '[]');
+        }
+
+        function saveUsers(users) {
+            localStorage.setItem('pronyo_users', JSON.stringify(users));
+        }
+
+        function getCurrentUser() {
+            return JSON.parse(localStorage.getItem('pronyo_current_user') || 'null');
+        }
+
+        function setCurrentUser(user) {
+            localStorage.setItem('pronyo_current_user', JSON.stringify(user));
+        }
+
+        function showMsg(elId, text, type) {
+            const el = document.getElementById(elId);
+            el.textContent = text;
+            el.className = 'msg ' + type + ' show';
+        }
+
+        function hideMsg(elId) {
+            const el = document.getElementById(elId);
+            el.className = 'msg';
+        }
+
+        // ─── TAB VÁLTÁS ────────────────────────────────────────────
+
+        function switchTab(tab) {
+            document.getElementById('formLogin').classList.toggle('active', tab === 'login');
+            document.getElementById('formRegister').classList.toggle('active', tab === 'register');
+            document.getElementById('tabLogin').classList.toggle('active', tab === 'login');
+            document.getElementById('tabRegister').classList.toggle('active', tab === 'register');
+            hideMsg('loginError');
+            hideMsg('registerError');
+            hideMsg('registerSuccess');
+        }
+
+        // ─── JELSZÓ TOGGLE ─────────────────────────────────────────
+
+        function togglePw(inputId, btn) {
+            const input = document.getElementById(inputId);
+            const icon = btn.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.className = 'fas fa-eye-slash';
+            } else {
+                input.type = 'password';
+                icon.className = 'fas fa-eye';
+            }
+        }
+
+        // ─── BEJELENTKEZÉS ─────────────────────────────────────────
+
+        // ─── ADMIN FIÓK ADATOK (egyezzen az admin-panel-pronyo.html-lel) ───
+        const ADMIN_EMAIL    = 'PronyoKicksAdmin@gmail.com';
+        const ADMIN_PASSWORD = 'PronyoAdmin1234';
+
+        function doLogin() {
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value;
+
+            if (!email || !password) {
+                showMsg('loginError', '⚠ Töltsd ki az összes mezőt!', 'error');
+                return;
+            }
+
+            // ─── ADMIN BEJELENTKEZÉS ───────────────────────────────
+            if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+                sessionStorage.setItem('pronyo_admin', '1');
+                window.location.href = 'admin-panel-pronyo.html';
+                return;
+            }
+
+            const users = getUsers();
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (!user) {
+                showMsg('loginError', '✕ Hibás e-mail cím vagy jelszó.', 'error');
+                return;
+            }
+
+            // ✅ Kosár MEGMARAD – nem töröljük!
+            setCurrentUser({ name: user.name, email: user.email });
+            showLoggedIn({ name: user.name, email: user.email });
+        }
+
+        // ─── REGISZTRÁCIÓ ──────────────────────────────────────────
+
+        function doRegister() {
+            const name = document.getElementById('regName').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+            const pw = document.getElementById('regPassword').value;
+            const pw2 = document.getElementById('regPassword2').value;
+
+            hideMsg('registerError');
+            hideMsg('registerSuccess');
+
+            if (!name || !email || !pw || !pw2) {
+                showMsg('registerError', '⚠ Töltsd ki az összes mezőt!', 'error');
+                return;
+            }
+
+            if (pw.length < 6) {
+                showMsg('registerError', '⚠ A jelszónak legalább 6 karakter kell!', 'error');
+                return;
+            }
+
+            if (pw !== pw2) {
+                showMsg('registerError', '✕ A két jelszó nem egyezik.', 'error');
+                return;
+            }
+
+            const users = getUsers();
+            if (users.find(u => u.email === email)) {
+                showMsg('registerError', '✕ Ez az e-mail cím már regisztrált.', 'error');
+                return;
+            }
+
+            users.push({ name, email, password: pw });
+            saveUsers(users);
+
+            showMsg('registerSuccess', '✓ Sikeres regisztráció! Átirányítás...', 'success');
+
+            setTimeout(() => {
+                setCurrentUser({ name, email });
+                showLoggedIn({ name, email });
+            }, 1200);
+        }
+
+        // ─── BEJELENTKEZETT NÉZET ──────────────────────────────────
+
+        function showLoggedIn(user) {
+            document.getElementById('authBox').style.display = 'none';
+            document.getElementById('loggedInBox').style.display = 'block';
+
+            document.getElementById('welcomeName').textContent = 'Üdv, ' + user.name + '!';
+            document.getElementById('welcomeEmail').textContent = user.email;
+            document.getElementById('avatarLetter').textContent = user.name.charAt(0).toUpperCase();
+        }
+
+        // ─── KIJELENTKEZÉS ─────────────────────────────────────────
+
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            // ✅ Kosár MEGMARAD kijelentkezéskor is!
+            localStorage.removeItem('pronyo_current_user');
+            document.getElementById('loggedInBox').style.display = 'none';
+            document.getElementById('authBox').style.display = 'block';
+        });
+
+        // ─── ENTER BILLENTYŰ TÁMOGATÁS ─────────────────────────────
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key !== 'Enter') return;
+            if (document.getElementById('formLogin').classList.contains('active')) {
+                doLogin();
+            } else {
+                doRegister();
+            }
+        });
+
+        // ─── OLDAL BETÖLTÉSEKOR ────────────────────────────────────
+
+        (function init() {
+            const user = getCurrentUser();
+            if (user) showLoggedIn(user);
+        })();
+    </script>
+
+</body>
+</html>

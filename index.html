@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipők - Prónyó Kicks</title>
+    <link rel="stylesheet" href="cipok.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="sizes-display.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="cipok.js" defer></script>
+    <script src="auth.js" defer></script>
+    <script src="chatbot.js" defer></script>
+    <script src="search.js" defer></script>
+    <script src="sizes-display.js" defer></script>
+    <script src="cookie-consent.js" defer></script>
+</head>
+<body>
+    <div class='navbar'>
+        <div class='logo'>
+            <img src="logo.png" alt="logo" class="hatter">
+        </div>
+        <div class='account-container'>
+            <form action=""><i class="fas fa-search fa-sm"></i><input type="text" class="search" placeholder="Search..."></form>
+        </div>
+        <a href="kosar.html" class='cart-container'>
+            <i class="fa fa-shopping-cart"></i>
+            <div class='cart-desc'><span class="kosar">🛒 <span id="cart-count">0</span> Kosár</span></div>
+        </a>
+    </div>
+
+    <div class='info-wrapper'>
+        <div class='shipping-container'><i class="fa fa-truck fa-2x"></i><div class='info-desc'>Ingyenes szállítás</div></div>
+        <div class='inventory-container'><i class="fa fa-shopping-basket fa-2x"></i><div class='info-desc'>Legnagyobb magyar raktár</div></div>
+    </div>
+
+    <div class='main-wrapper'>
+        <div class="menu">
+            <a href="index.html" class='menu-item'><div class='menu-item-title'>Összes</div><div class='menu-item-number'>151</div></a>
+            <a href="index.html?brand=Adidas" class='menu-item'><div class='menu-item-title'>Adidas</div><div class='menu-item-number'>15</div></a>
+            <a href="index.html?brand=Nike" class='menu-item'><div class='menu-item-title'>Nike</div><div class='menu-item-number'>40</div></a>
+            <a href="index.html?brand=Jordan" class='menu-item'><div class='menu-item-title'>Jordan</div><div class='menu-item-number'>50</div></a>
+            <a href="index.html?brand=Vans" class='menu-item'><div class='menu-item-title'>Vans</div><div class='menu-item-number'>10</div></a>
+            <a href="index.html?brand=Converse" class='menu-item'><div class='menu-item-title'>Converse</div><div class='menu-item-number'>10</div></a>
+            <a href="index.html?brand=Balenciaga" class='menu-item'><div class='menu-item-title'>Balenciaga</div><div class='menu-item-number'>10</div></a>
+            <a href="index.html?brand=Louis Vuitton" class='menu-item'><div class='menu-item-title'>Louis Vuitton</div><div class='menu-item-number'>3</div></a>
+            <a href="index.html?brand=Dior" class='menu-item'><div class='menu-item-title'>Dior</div><div class='menu-item-number'>3</div></a>
+            <a href="index.html?brand=Gucci" class='menu-item'><div class='menu-item-title'>Gucci</div><div class='menu-item-number'>10</div></a>
+        </div>
+
+        <div class='products-container'>
+            <!-- ADIDAS (15) -->
+            <div class='shop-card' data-cat='Adidas' data-sizes='38,39,40,41,42,43,44'>
+    <div class="title">Campus 00s Core Black</div>
+    <div class="desc">2022</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/campus-00s-core-black/1_1.png" class="sneaker_img">
+            <img src="images/adidas/campus-00s-core-black/1_2.jpg" class="sneaker_img">
+            <img src="images/adidas/campus-00s-core-black/1_3.jpg" class="sneaker_img">
+            <img src="images/adidas/campus-00s-core-black/2_4.webp" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$110</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Adidas' data-sizes='42,43,44,45,46'>
+    <div class="title">Crazy 1 Sunshine</div>
+    <div class="desc">2022</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/crazy-1-sunshine/1_1.jpg" class="sneaker_img">
+            <img src="images/adidas/crazy-1-sunshine/1_2.jpeg" class="sneaker_img">
+            <img src="images/adidas/crazy-1-sunshine/1_3.jpg" class="sneaker_img">
+            <img src="images/adidas/crazy-1-sunshine/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$160</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Adidas' data-sizes='40,41,42,43'>
+    <div class="title">Forum Low Bad Bunny White</div>
+    <div class="desc">2021</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/forum-low-bad-bunny/1_1.webp" class="sneaker_img">
+            <img src="images/adidas/forum-low-bad-bunny/1_2.jpg" class="sneaker_img">
+            <img src="images/adidas/forum-low-bad-bunny/2_3.jpg" class="sneaker_img">
+            <img src="images/adidas/forum-low-bad-bunny/2_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$160</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Adidas' data-sizes='40,41,42,43,44'>
+    <div class="title">Gazelle Indoor Blue Bird</div>
+    <div class="desc">2022</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/gazelle-indoor-blue-bird/1_1.jpg" class="sneaker_img">
+            <img src="images/adidas/gazelle-indoor-blue-bird/1_2.jpg" class="sneaker_img">
+            <img src="images/adidas/gazelle-indoor-blue-bird/1_3.jpg" class="sneaker_img">
+            <img src="images/adidas/gazelle-indoor-blue-bird/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$110</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Adidas' data-sizes='40,41,42,43,44'>
+    <div class="title">NMD HU Pharrell Yellow</div>
+    <div class="desc">2016</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/nmd-hu-pharrell-yellow/1_1.png" class="sneaker_img">
+            <img src="images/adidas/nmd-hu-pharrell-yellow/1_2.png" class="sneaker_img">
+            <img src="images/adidas/nmd-hu-pharrell-yellow/1_3.png" class="sneaker_img">
+            <img src="images/adidas/nmd-hu-pharrell-yellow/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$250</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Adidas' data-sizes='41,42,43,44,45'>
+    <div class="title">NMD R1 Japan Triple Black</div>
+    <div class="desc">2017</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/nmd-r1-japan-black/1_1.jpg" class="sneaker_img">
+            <img src="images/adidas/nmd-r1-japan-black/2_2.jpg" class="sneaker_img">
+            <img src="images/adidas/nmd-r1-japan-black/2_3.jpg" class="sneaker_img">
+            <img src="images/adidas/nmd-r1-japan-black/3_4.png" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$170</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Adidas' data-sizes='39,40,41,42,43,44,45'>
+    <div class="title">Samba OG White Gum</div>
+    <div class="desc">2023</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/samba-og-white-gum/1_1.jpg" class="sneaker_img">
+            <img src="images/adidas/samba-og-white-gum/1_2.jpg" class="sneaker_img">
+            <img src="images/adidas/samba-og-white-gum/1_3.jpg" class="sneaker_img">
+            <img src="images/adidas/samba-og-white-gum/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$100</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Adidas' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Ultra Boost 1.0 Triple White</div>
+    <div class="desc">2015</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/ultra-boost-1-triple-white/1_1.jpg" class="sneaker_img">
+            <img src="images/adidas/ultra-boost-1-triple-white/1_2.jpg" class="sneaker_img">
+            <img src="images/adidas/ultra-boost-1-triple-white/1_3.jpg" class="sneaker_img">
+            <img src="images/adidas/ultra-boost-1-triple-white/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$180</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Adidas' data-sizes='39,40,41,42,43,44'>
+    <div class="title">Ultra Boost 4.0 DNA Black White</div>
+    <div class="desc">2019</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/ultra-boost-4-dna/1_1.jpeg" class="sneaker_img">
+            <img src="images/adidas/ultra-boost-4-dna/1_2.png" class="sneaker_img">
+            <img src="images/adidas/ultra-boost-4-dna/1_3.jpg" class="sneaker_img">
+            <img src="images/adidas/ultra-boost-4-dna/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$180</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Adidas' data-sizes='39,40,41,42,43'>
+    <div class="title">Yeezy Boost 350 V2 Beluga 2.0</div>
+    <div class="desc">2017</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/yeezy-350-v2-beluga/1_1.jpg" class="sneaker_img">
+            <img src="images/adidas/yeezy-350-v2-beluga/1_2.jpg" class="sneaker_img">
+            <img src="images/adidas/yeezy-350-v2-beluga/1_3.jpg" class="sneaker_img">
+            <img src="images/adidas/yeezy-350-v2-beluga/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$230</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Adidas' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Yeezy Boost 350 V2 Zebra</div>
+    <div class="desc">2017</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/yeezy-350-v2-zebra/1_1.jpg" class="sneaker_img">
+            <img src="images/adidas/yeezy-350-v2-zebra/1_2.jpg" class="sneaker_img">
+            <img src="images/adidas/yeezy-350-v2-zebra/1_3.jpg" class="sneaker_img">
+            <img src="images/adidas/yeezy-350-v2-zebra/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$220</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Adidas' data-sizes='40,41,42,43'>
+    <div class="title">Yeezy Boost 380 Alien</div>
+    <div class="desc">2019</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/yeezy-380-alien/1_1.jpg" class="sneaker_img">
+            <img src="images/adidas/yeezy-380-alien/1_2.jpg" class="sneaker_img">
+            <img src="images/adidas/yeezy-380-alien/1_3.png" class="sneaker_img">
+            <img src="images/adidas/yeezy-380-alien/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$230</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Adidas' data-sizes='40,41,42,43,44'>
+    <div class="title">Yeezy Boost 700 V2 Static</div>
+    <div class="desc">2018</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/yeezy-700-v2-static/1_1.png" class="sneaker_img">
+            <img src="images/adidas/yeezy-700-v2-static/1_2.jpg" class="sneaker_img">
+            <img src="images/adidas/yeezy-700-v2-static/2_3.jpg" class="sneaker_img">
+            <img src="images/adidas/yeezy-700-v2-static/2_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$300</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Adidas' data-sizes='41,42,43,44,45,46'>
+    <div class="title">Yeezy Boost 700 Wave Runner</div>
+    <div class="desc">2017</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/yeezy-700-wave-runner/1_1.jpg" class="sneaker_img">
+            <img src="images/adidas/yeezy-700-wave-runner/1_2.jpg" class="sneaker_img">
+            <img src="images/adidas/yeezy-700-wave-runner/1_3.jpg" class="sneaker_img">
+            <img src="images/adidas/yeezy-700-wave-runner/1_4.png" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$300</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Adidas' data-sizes='41,42,43,44,45'>
+    <div class="title">ZX 8000 Aqua</div>
+    <div class="desc">2020</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/adidas/zx-8000-aqua/1_1.jpg" class="sneaker_img">
+            <img src="images/adidas/zx-8000-aqua/1_2.jpg" class="sneaker_img">
+            <img src="images/adidas/zx-8000-aqua/1_3.jpg" class="sneaker_img">
+            <img src="images/adidas/zx-8000-aqua/2_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$130</div><button class="button">Add to cart</button></div>
+</div>
+
+            <!-- NIKE (40) -->
+            <div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44,45,46'>
+    <div class="title">Air Force 1 Low White '07</div>
+    <div class="desc">Classic</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/af1-low-white/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/af1-low-white/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/af1-low-white/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/af1-low-white/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$110</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Air Force 1 Low Triple Black</div>
+    <div class="desc">All Black</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/af1-low-triple-black/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/af1-low-triple-black/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/af1-low-triple-black/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/af1-low-triple-black/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$110</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='41,42,43,44'>
+    <div class="title">Air Force 1 Low Supreme White</div>
+    <div class="desc">Supreme</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/af1-low-supreme-white/1_1.webp" class="sneaker_img">
+            <img src="images/nike/af1-low-supreme-white/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/af1-low-supreme-white/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/af1-low-supreme-white/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$350</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43'>
+    <div class="title">Air Force 1 Low Supreme Black</div>
+    <div class="desc">Supreme</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/af1-low-supreme-black/1_1.webp" class="sneaker_img">
+            <img src="images/nike/af1-low-supreme-black/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/af1-low-supreme-black/1_3.webp" class="sneaker_img">
+            <img src="images/nike/af1-low-supreme-black/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$350</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">Air Max 1 Patta Monarch</div>
+    <div class="desc">Patta</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/air-max-1-patta-monarch/1_1.png" class="sneaker_img">
+            <img src="images/nike/air-max-1-patta-monarch/1_2.png" class="sneaker_img">
+            <img src="images/nike/air-max-1-patta-monarch/1_3.png" class="sneaker_img">
+            <img src="images/nike/air-max-1-patta-monarch/1_4.png" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$250</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Air Max 1 Anniversary Red</div>
+    <div class="desc">2017</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/air-max-1-anniversary-red/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-1-anniversary-red/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-1-anniversary-red/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-1-anniversary-red/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$160</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='39,40,41,42,43,44,45'>
+    <div class="title">Air Max 90 Infrared</div>
+    <div class="desc">Classic</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/air-max-90-infrared/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-90-infrared/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-90-infrared/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-90-infrared/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$140</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">Air Max 95 Neon</div>
+    <div class="desc">OG</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/air-max-95-neon/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-95-neon/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-95-neon/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-95-neon/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$170</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Air Max 97 Silver Bullet</div>
+    <div class="desc">Silver</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/air-max-97-silver-bullet/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-97-silver-bullet/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-97-silver-bullet/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-97-silver-bullet/1_4.png" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$170</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">Air Max Plus TN Hyper Blue</div>
+    <div class="desc">Blue</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/air-max-plus-tn-hyper-blue/1_1.png" class="sneaker_img">
+            <img src="images/nike/air-max-plus-tn-hyper-blue/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-plus-tn-hyper-blue/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-plus-tn-hyper-blue/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$170</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='38,39,40,41,42,43,44,45'>
+    <div class="title">Dunk Low Panda</div>
+    <div class="desc">B/W</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/dunk-low-panda/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-panda/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-panda/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-panda/1_4.webp" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$150</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">Dunk Low University Blue</div>
+    <div class="desc">UNC</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/dunk-low-university-blue/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-university-blue/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-university-blue/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-university-blue/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$150</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Dunk Low Michigan</div>
+    <div class="desc">Maize</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/dunk-low-michigan/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-michigan/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-michigan/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-michigan/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$150</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">Dunk Low Syracuse</div>
+    <div class="desc">Orange</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/dunk-low-syracuse/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-syracuse/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-syracuse/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-syracuse/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$150</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43'>
+    <div class="title">Dunk Low Coast</div>
+    <div class="desc">Navy</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/dunk-low-coast/1_1.png" class="sneaker_img">
+            <img src="images/nike/dunk-low-coast/1_2.png" class="sneaker_img">
+            <img src="images/nike/dunk-low-coast/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-coast/1_4.png" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$150</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">Dunk Low Jarritos</div>
+    <div class="desc">Green</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/dunk-low-jarritos/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-jarritos/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-jarritos/1_3.png" class="sneaker_img">
+            <img src="images/nike/dunk-low-jarritos/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$160</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='41,42,43,44'>
+    <div class="title">Dunk Low Travis Scott</div>
+    <div class="desc">TS</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/dunk-low-travis-scott/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-travis-scott/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-travis-scott/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-travis-scott/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1200</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43'>
+    <div class="title">Dunk Low Off-White Pine Green</div>
+    <div class="desc">OW</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/dunk-low-off-white/1_1.png" class="sneaker_img">
+            <img src="images/nike/dunk-low-off-white/1_2.png" class="sneaker_img">
+            <img src="images/nike/dunk-low-off-white/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/dunk-low-off-white/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1500</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">SB Dunk Low Ben & Jerry's</div>
+    <div class="desc">Chunky</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/sb-dunk-ben-jerrys/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/sb-dunk-ben-jerrys/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/sb-dunk-ben-jerrys/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/sb-dunk-ben-jerrys/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1800</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43'>
+    <div class="title">SB Dunk Low Paris</div>
+    <div class="desc">Rare</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/sb-dunk-paris/1_1.jpeg" class="sneaker_img">
+            <img src="images/nike/sb-dunk-paris/1_2.jpeg" class="sneaker_img">
+            <img src="images/nike/sb-dunk-paris/1_3.jpeg" class="sneaker_img">
+            <img src="images/nike/sb-dunk-paris/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$5000</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='41,42,43,44'>
+    <div class="title">SB Dunk Low Supreme Stars</div>
+    <div class="desc">Stars</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/sb-dunk-supreme-stars/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/sb-dunk-supreme-stars/1_2.png" class="sneaker_img">
+            <img src="images/nike/sb-dunk-supreme-stars/1_3.webp" class="sneaker_img">
+            <img src="images/nike/sb-dunk-supreme-stars/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$2000</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43'>
+    <div class="title">SB Dunk Low Freddy Krueger</div>
+    <div class="desc">Freddy</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/sb-dunk-freddy-krueger/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/sb-dunk-freddy-krueger/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/sb-dunk-freddy-krueger/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/sb-dunk-freddy-krueger/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$3000</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='39,40,41,42,43,44,45'>
+    <div class="title">Blazer Mid 77 Vintage</div>
+    <div class="desc">Vintage</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/blazer-mid-77-vintage/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/blazer-mid-77-vintage/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/blazer-mid-77-vintage/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/blazer-mid-77-vintage/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$100</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43'>
+    <div class="title">Blazer Mid Off-White Grim Reaper</div>
+    <div class="desc">OW</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/blazer-mid-off-white/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/blazer-mid-off-white/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/blazer-mid-off-white/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/blazer-mid-off-white/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1200</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Cortez Forrest Gump</div>
+    <div class="desc">Classic</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/cortez-forrest-gump/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/cortez-forrest-gump/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/cortez-forrest-gump/1_3.jpeg" class="sneaker_img">
+            <img src="images/nike/cortez-forrest-gump/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$90</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">P-6000 Metallic Silver</div>
+    <div class="desc">Runner</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/p-6000-metallic-silver/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/p-6000-metallic-silver/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/p-6000-metallic-silver/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/p-6000-metallic-silver/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$110</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">Zoom Vomero 5 Oatmeal</div>
+    <div class="desc">Runner</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/zoom-vomero-5-oatmeal/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/zoom-vomero-5-oatmeal/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/zoom-vomero-5-oatmeal/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/zoom-vomero-5-oatmeal/1_4.jpeg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$160</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">React Element 87 Sail</div>
+    <div class="desc">Sail</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/react-element-87-sail/1_1.webp" class="sneaker_img">
+            <img src="images/nike/react-element-87-sail/2_2.jpg" class="sneaker_img">
+            <img src="images/nike/react-element-87-sail/2_3.jpg" class="sneaker_img">
+            <img src="images/nike/react-element-87-sail/2_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$160</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43'>
+    <div class="title">Air Presto Off-White</div>
+    <div class="desc">OW</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/air-presto-off-white/1_1.png" class="sneaker_img">
+            <img src="images/nike/air-presto-off-white/1_2.png" class="sneaker_img">
+            <img src="images/nike/air-presto-off-white/1_3.png" class="sneaker_img">
+            <img src="images/nike/air-presto-off-white/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1000</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Air Huarache OG Scream Green</div>
+    <div class="desc">Green</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/air-huarache-scream-green/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/air-huarache-scream-green/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/air-huarache-scream-green/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/air-huarache-scream-green/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$130</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Air Trainer 1 Chlorophyll</div>
+    <div class="desc">Green</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/air-trainer-1-chlorophyll/1_1.jpeg" class="sneaker_img">
+            <img src="images/nike/air-trainer-1-chlorophyll/1_2.jpeg" class="sneaker_img">
+            <img src="images/nike/air-trainer-1-chlorophyll/1_3.jpeg" class="sneaker_img">
+            <img src="images/nike/air-trainer-1-chlorophyll/1_4.jpeg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$130</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">LD Waffle Sacai Pine Green</div>
+    <div class="desc">Sacai</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/ld-waffle-sacai-pine/1_1.png" class="sneaker_img">
+            <img src="images/nike/ld-waffle-sacai-pine/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/ld-waffle-sacai-pine/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/ld-waffle-sacai-pine/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$400</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43'>
+    <div class="title">LD Waffle Sacai Black Nylon</div>
+    <div class="desc">Sacai</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/ld-waffle-sacai-black/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/ld-waffle-sacai-black/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/ld-waffle-sacai-black/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/ld-waffle-sacai-black/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$400</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Air Max 270 React Bauhaus</div>
+    <div class="desc">Bauhaus</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/air-max-270-react-bauhaus/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-270-react-bauhaus/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-270-react-bauhaus/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-270-react-bauhaus/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$150</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='41,42,43,44,45,46'>
+    <div class="title">Air Foamposite One Galaxy</div>
+    <div class="desc">Galaxy</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/air-foamposite-galaxy/1_1.png" class="sneaker_img">
+            <img src="images/nike/air-foamposite-galaxy/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/air-foamposite-galaxy/2_3.jpg" class="sneaker_img">
+            <img src="images/nike/air-foamposite-galaxy/2_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$250</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">Air Max 98 Gundam</div>
+    <div class="desc">Gundam</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/air-max-98-gundam/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-98-gundam/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-98-gundam/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/air-max-98-gundam/1_4.png" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$200</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">Air Rift Breathe Black</div>
+    <div class="desc">Black</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/air-rift-breathe-black/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/air-rift-breathe-black/1_2.png" class="sneaker_img">
+            <img src="images/nike/air-rift-breathe-black/1_3.png" class="sneaker_img">
+            <img src="images/nike/air-rift-breathe-black/1_4.png" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$120</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">ISPA Link Axis</div>
+    <div class="desc">ISPA</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/ispa-link-axis/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/ispa-link-axis/1_2.jpg" class="sneaker_img">
+            <img src="images/nike/ispa-link-axis/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/ispa-link-axis/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$170</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44,45'>
+    <div class="title">ACG Mountain Fly Low</div>
+    <div class="desc">ACG</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/acg-mountain-fly-low/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/acg-mountain-fly-low/1_2.jpeg" class="sneaker_img">
+            <img src="images/nike/acg-mountain-fly-low/1_3.jpg" class="sneaker_img">
+            <img src="images/nike/acg-mountain-fly-low/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$160</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Nike' data-sizes='40,41,42,43,44'>
+    <div class="title">Air Ship SP Pine Green</div>
+    <div class="desc">Green</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/nike/air-ship-pine-green/1_1.jpg" class="sneaker_img">
+            <img src="images/nike/air-ship-pine-green/1_2.jpeg" class="sneaker_img">
+            <img src="images/nike/air-ship-pine-green/1_3.jpeg" class="sneaker_img">
+            <img src="images/nike/air-ship-pine-green/1_4.jpeg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$140</div><button class="button">Add to cart</button></div>
+</div>
+
+                        <!-- 🟤 VANS (10) -->
+            <div class='shop-card' data-cat='Vans' data-sizes='38,39,40,41,42,43,44,45'>
+    <div class="title">Old Skool Black White</div>
+    <div class="desc">Classic</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/vans/old-skool-black-white/1_1.jpg" class="sneaker_img">
+            <img src="images/vans/old-skool-black-white/1_2.png" class="sneaker_img">
+            <img src="images/vans/old-skool-black-white/1_3.jpeg" class="sneaker_img">
+            <img src="images/vans/old-skool-black-white/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$65</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Vans' data-sizes='39,40,41,42,43,44,45'>
+    <div class="title">Sk8-Hi Black White</div>
+    <div class="desc">Hi</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/vans/sk8-hi-black-white/1_1.jpg" class="sneaker_img">
+            <img src="images/vans/sk8-hi-black-white/1_2.webp" class="sneaker_img">
+            <img src="images/vans/sk8-hi-black-white/1_3.jpg" class="sneaker_img">
+            <img src="images/vans/sk8-hi-black-white/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$70</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Vans' data-sizes='38,39,40,41,42,43,44'>
+    <div class="title">Slip-On Checkerboard</div>
+    <div class="desc">Classic</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/vans/slip-on-checkerboard/1_1.jpg" class="sneaker_img">
+            <img src="images/vans/slip-on-checkerboard/1_2.png" class="sneaker_img">
+            <img src="images/vans/slip-on-checkerboard/1_3.png" class="sneaker_img">
+            <img src="images/vans/slip-on-checkerboard/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$60</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Vans' data-sizes='39,40,41,42,43,44'>
+    <div class="title">Era Black</div>
+    <div class="desc">Skate</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/vans/era-black/1_1.jpg" class="sneaker_img">
+            <img src="images/vans/era-black/1_2.jpg" class="sneaker_img">
+            <img src="images/vans/era-black/1_3.jpg" class="sneaker_img">
+            <img src="images/vans/era-black/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$60</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Vans' data-sizes='38,39,40,41,42,43,44,45'>
+    <div class="title">Authentic Black</div>
+    <div class="desc">Original</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/vans/authentic-black/1_1.jpeg" class="sneaker_img">
+            <img src="images/vans/authentic-black/1_2.jpg" class="sneaker_img">
+            <img src="images/vans/authentic-black/1_3.png" class="sneaker_img">
+            <img src="images/vans/authentic-black/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$55</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Vans' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Knu Skool Black White</div>
+    <div class="desc">Puffy</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/vans/knu-skool-black-white/1_1.jpg" class="sneaker_img">
+            <img src="images/vans/knu-skool-black-white/1_2.jpg" class="sneaker_img">
+            <img src="images/vans/knu-skool-black-white/1_3.jpg" class="sneaker_img">
+            <img src="images/vans/knu-skool-black-white/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$80</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Vans' data-sizes='40,41,42,43,44'>
+    <div class="title">Old Skool Vault LX</div>
+    <div class="desc">LX</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/vans/old-skool-vault-lx/1_1.jpg" class="sneaker_img">
+            <img src="images/vans/old-skool-vault-lx/1_2.jpg" class="sneaker_img">
+            <img src="images/vans/old-skool-vault-lx/1_3.jpg" class="sneaker_img">
+            <img src="images/vans/old-skool-vault-lx/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$90</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Vans' data-sizes='40,41,42,43,44'>
+    <div class="title">Sk8-Hi Fear of God</div>
+    <div class="desc">FOG</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/vans/sk8-hi-fear-of-god/1_1.jpg" class="sneaker_img">
+            <img src="images/vans/sk8-hi-fear-of-god/1_2.jpg" class="sneaker_img">
+            <img src="images/vans/sk8-hi-fear-of-god/1_3.jpg" class="sneaker_img">
+            <img src="images/vans/sk8-hi-fear-of-god/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$150</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Vans' data-sizes='40,41,42,43'>
+    <div class="title">Slip-On Supreme Leopard</div>
+    <div class="desc">Supreme</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/vans/slip-on-supreme-leopard/1_1.jpeg" class="sneaker_img">
+            <img src="images/vans/slip-on-supreme-leopard/1_2.jpeg" class="sneaker_img">
+            <img src="images/vans/slip-on-supreme-leopard/1_3.jpg" class="sneaker_img">
+            <img src="images/vans/slip-on-supreme-leopard/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$200</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Vans' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Half Cab 33 DX</div>
+    <div class="desc">DX</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/vans/half-cab-33-dx/1_1.jpg" class="sneaker_img">
+            <img src="images/vans/half-cab-33-dx/1_2.jpg" class="sneaker_img">
+            <img src="images/vans/half-cab-33-dx/1_3.jpg" class="sneaker_img">
+            <img src="images/vans/half-cab-33-dx/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$85</div><button class="button">Add to cart</button></div>
+</div>
+
+                        <!-- ⚫ CONVERSE (10) -->
+            <div class='shop-card' data-cat='Converse' data-sizes='38,39,40,41,42,43,44,45,46'>
+    <div class="title">Chuck Taylor All Star High Black</div>
+    <div class="desc">Classic</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/converse/chuck-taylor-high-black/1_1.png" class="sneaker_img">
+            <img src="images/converse/chuck-taylor-high-black/1_2.jpg" class="sneaker_img">
+            <img src="images/converse/chuck-taylor-high-black/1_3.png" class="sneaker_img">
+            <img src="images/converse/chuck-taylor-high-black/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$60</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Converse' data-sizes='39,40,41,42,43,44,45'>
+    <div class="title">Chuck 70s High Parchment</div>
+    <div class="desc">70s</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/converse/chuck-70-high-parchment/1_1.jpg" class="sneaker_img">
+            <img src="images/converse/chuck-70-high-parchment/1_2.webp" class="sneaker_img">
+            <img src="images/converse/chuck-70-high-parchment/1_3.jpg" class="sneaker_img">
+            <img src="images/converse/chuck-70-high-parchment/2_4.jpeg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$85</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Converse' data-sizes='38,39,40,41,42,43,44,45'>
+    <div class="title">Chuck 70 Low Black</div>
+    <div class="desc">Low</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/converse/chuck-70-low-black/1_1.jpg" class="sneaker_img">
+            <img src="images/converse/chuck-70-low-black/1_2.jpg" class="sneaker_img">
+            <img src="images/converse/chuck-70-low-black/1_3.jpeg" class="sneaker_img">
+            <img src="images/converse/chuck-70-low-black/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$85</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Converse' data-sizes='38,39,40,41,42,43,44'>
+    <div class="title">Run Star Hike Black</div>
+    <div class="desc">Hike</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/converse/run-star-hike-black/1_1.webp" class="sneaker_img">
+            <img src="images/converse/run-star-hike-black/1_2.jpg" class="sneaker_img">
+            <img src="images/converse/run-star-hike-black/1_3.jpg" class="sneaker_img">
+            <img src="images/converse/run-star-hike-black/2_4.jpeg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$110</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Converse' data-sizes='38,39,40,41,42,43'>
+    <div class="title">Run Star Motion Black</div>
+    <div class="desc">Motion</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/converse/run-star-motion-black/1_1.jpg" class="sneaker_img">
+            <img src="images/converse/run-star-motion-black/1_2.webp" class="sneaker_img">
+            <img src="images/converse/run-star-motion-black/1_3.jpg" class="sneaker_img">
+            <img src="images/converse/run-star-motion-black/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$120</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Converse' data-sizes='39,40,41,42,43,44,45'>
+    <div class="title">One Star Ox Black White</div>
+    <div class="desc">One Star</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/converse/one-star-ox-black-white/1_1.jpg" class="sneaker_img">
+            <img src="images/converse/one-star-ox-black-white/1_2.jpg" class="sneaker_img">
+            <img src="images/converse/one-star-ox-black-white/1_3.jpg" class="sneaker_img">
+            <img src="images/converse/one-star-ox-black-white/1_4.jpeg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$75</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Converse' data-sizes='38,39,40,41,42,43,44'>
+    <div class="title">Chuck 70 Comme des Garçons</div>
+    <div class="desc">CDG</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/converse/chuck-70-comme-des-garcons/1_1.jpg" class="sneaker_img">
+            <img src="images/converse/chuck-70-comme-des-garcons/1_2.jpg" class="sneaker_img">
+            <img src="images/converse/chuck-70-comme-des-garcons/1_3.png" class="sneaker_img">
+            <img src="images/converse/chuck-70-comme-des-garcons/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$150</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Converse' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Weapon CX Lakers</div>
+    <div class="desc">Lakers</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/converse/weapon-cx-lakers/2_1.jpg" class="sneaker_img">
+            <img src="images/converse/weapon-cx-lakers/2_2.jpg" class="sneaker_img">
+            <img src="images/converse/weapon-cx-lakers/2_3.jpg" class="sneaker_img">
+            <img src="images/converse/weapon-cx-lakers/2_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$110</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Converse' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Fastbreak Pro Mid</div>
+    <div class="desc">Mid</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/converse/fastbreak-pro-mid/1_1.jpg" class="sneaker_img">
+            <img src="images/converse/fastbreak-pro-mid/1_2.jpg" class="sneaker_img">
+            <img src="images/converse/fastbreak-pro-mid/1_3.jpg" class="sneaker_img">
+            <img src="images/converse/fastbreak-pro-mid/2_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$100</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Converse' data-sizes='37,38,39,40,41,42,43'>
+    <div class="title">Chuck Taylor All Star Lift Platform</div>
+    <div class="desc">Lift</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/converse/chuck-taylor-lift-platform/1_1.jpg" class="sneaker_img">
+            <img src="images/converse/chuck-taylor-lift-platform/1_2.jpeg" class="sneaker_img">
+            <img src="images/converse/chuck-taylor-lift-platform/1_3.jpg" class="sneaker_img">
+            <img src="images/converse/chuck-taylor-lift-platform/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$70</div><button class="button">Add to cart</button></div>
+</div>
+
+                        <!-- 🔴 JORDAN (50) -->
+            <div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 1 High Chicago</div>
+    <div class="desc">2015</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-high-chicago/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-chicago/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-chicago/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-chicago/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$450</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 1 High Bred Toe</div>
+    <div class="desc">2018</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-high-bred-toe/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-bred-toe/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-bred-toe/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-bred-toe/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$400</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 1 High Royal</div>
+    <div class="desc">2017</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-high-royal/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-royal/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-royal/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-royal/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$350</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 1 High Shadow 2.0</div>
+    <div class="desc">2021</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-high-shadow-2/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-shadow-2/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-shadow-2/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-shadow-2/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$300</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 1 High University Blue</div>
+    <div class="desc">2021</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-high-unc/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-unc/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-unc/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-unc/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$350</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 1 High Taxi</div>
+    <div class="desc">2024</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-high-taxi/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-taxi/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-taxi/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-taxi/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$250</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 1 High Lost and Found</div>
+    <div class="desc">2022</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-high-lost-found/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-lost-found/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-lost-found/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-lost-found/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$350</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 1 High Dark Mocha</div>
+    <div class="desc">2020</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-high-mocha/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-mocha/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-mocha/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-mocha/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$400</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='41,42,43,44'>
+    <div class="title">Jordan 1 High Off-White Chicago</div>
+    <div class="desc">OW</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-high-ow-chicago/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-ow-chicago/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-ow-chicago/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-ow-chicago/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$5000</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43'>
+    <div class="title">Jordan 1 High Travis Scott</div>
+    <div class="desc">TS</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-high-ts/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-ts/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-ts/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-ts/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1800</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 1 Low Travis Scott Mocha</div>
+    <div class="desc">TS</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-low-ts-mocha/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-low-ts-mocha/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-low-ts-mocha/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-low-ts-mocha/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1200</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43'>
+    <div class="title">Jordan 1 Low Fragment Travis Scott</div>
+    <div class="desc">TS</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-low-frag-ts/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-low-frag-ts/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-low-frag-ts/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-low-frag-ts/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$2000</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 1 Low Dior</div>
+    <div class="desc">Dior</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-low-dior/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-low-dior/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-low-dior/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-low-dior/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$8000</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 2 Chicago</div>
+    <div class="desc">2022</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j2-chicago/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j2-chicago/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j2-chicago/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j2-chicago/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$200</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 3 White Cement Reimagined</div>
+    <div class="desc">2023</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j3-white-cement/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j3-white-cement/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j3-white-cement/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j3-white-cement/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$220</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 3 Black Cement</div>
+    <div class="desc">2018</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j3-black-cement/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j3-black-cement/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j3-black-cement/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j3-black-cement/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$250</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 3 A Ma Maniére</div>
+    <div class="desc">AMM</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j3-amma/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j3-amma/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j3-amma/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j3-amma/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$400</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 4 Bred</div>
+    <div class="desc">2019</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j4-bred/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-bred/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-bred/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-bred/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$400</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 4 Military Black</div>
+    <div class="desc">2022</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j4-military-black/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-military-black/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-military-black/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-military-black/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$350</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43'>
+    <div class="title">Jordan 4 Off-White Sail</div>
+    <div class="desc">OW</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j4-ow-sail/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-ow-sail/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-ow-sail/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-ow-sail/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1500</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 4 Travis Scott</div>
+    <div class="desc">TS</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j4-ts/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-ts/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-ts/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-ts/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1200</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43'>
+    <div class="title">Jordan 4 SB Pine Green</div>
+    <div class="desc">SB</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j4-sb/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-sb/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-sb/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-sb/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1000</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 5 Fire Red</div>
+    <div class="desc">2020</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j5-fire-red/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j5-fire-red/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j5-fire-red/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j5-fire-red/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$220</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43'>
+    <div class="title">Jordan 5 Off-White Sail</div>
+    <div class="desc">OW</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j5-ow-sail/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j5-ow-sail/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j5-ow-sail/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j5-ow-sail/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1200</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 6 Infrared</div>
+    <div class="desc">2019</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j6-infrared/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j6-infrared/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j6-infrared/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j6-infrared/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$250</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43'>
+    <div class="title">Jordan 6 Travis Scott British Khaki</div>
+    <div class="desc">TS</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j6-ts/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j6-ts/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j6-ts/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j6-ts/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1000</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 7 Bordeaux</div>
+    <div class="desc">2015</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j7-bordeaux/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j7-bordeaux/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j7-bordeaux/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j7-bordeaux/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$200</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 8 Aqua</div>
+    <div class="desc">2015</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j8-aqua/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j8-aqua/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j8-aqua/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j8-aqua/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$200</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 9 Cool Grey</div>
+    <div class="desc">2021</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j9-cool-grey/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j9-cool-grey/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j9-cool-grey/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j9-cool-grey/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$200</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 10 Steel</div>
+    <div class="desc">2018</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j10-steel/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j10-steel/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j10-steel/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j10-steel/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$190</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 11 Concord</div>
+    <div class="desc">2018</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j11-concord/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j11-concord/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j11-concord/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j11-concord/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$300</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 11 Bred</div>
+    <div class="desc">2019</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j11-bred/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j11-bred/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j11-bred/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j11-bred/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$350</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 11 Cool Grey</div>
+    <div class="desc">2021</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j11-cool-grey/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j11-cool-grey/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j11-cool-grey/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j11-cool-grey/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$280</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 12 Flu Game</div>
+    <div class="desc">2016</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j12-flu-game/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j12-flu-game/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j12-flu-game/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j12-flu-game/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$250</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 12 Taxi</div>
+    <div class="desc">2013</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j12-taxi/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j12-taxi/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j12-taxi/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j12-taxi/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$220</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 13 Bred</div>
+    <div class="desc">2017</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j13-bred/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j13-bred/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j13-bred/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j13-bred/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$220</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 14 Last Shot</div>
+    <div class="desc">2018</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j14-last-shot/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j14-last-shot/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j14-last-shot/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j14-last-shot/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$220</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 1 Mid Chicago Black Toe</div>
+    <div class="desc">Mid</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-mid-chicago/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-mid-chicago/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-mid-chicago/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-mid-chicago/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$140</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 1 Mid Ice Blue</div>
+    <div class="desc">Mid</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-mid-ice-blue/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-mid-ice-blue/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-mid-ice-blue/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-mid-ice-blue/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$130</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 1 Low Panda</div>
+    <div class="desc">Low</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-low-panda/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-low-panda/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-low-panda/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-low-panda/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$130</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 3 UNC</div>
+    <div class="desc">UNC</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j3-unc/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j3-unc/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j3-unc/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j3-unc/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$250</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 4 Lightning</div>
+    <div class="desc">2021</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j4-lightning/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-lightning/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-lightning/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-lightning/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$300</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 5 Raging Bull</div>
+    <div class="desc">2021</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j5-raging-bull/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j5-raging-bull/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j5-raging-bull/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j5-raging-bull/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$250</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 6 Carmine</div>
+    <div class="desc">2021</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j6-carmine/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j6-carmine/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j6-carmine/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j6-carmine/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$250</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 7 Olympic</div>
+    <div class="desc">2012</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j7-olympic/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j7-olympic/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j7-olympic/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j7-olympic/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$250</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 11 Cherry</div>
+    <div class="desc">2022</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j11-cherry/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j11-cherry/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j11-cherry/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j11-cherry/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$280</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 12 Playoffs</div>
+    <div class="desc">2022</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j12-playoffs/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j12-playoffs/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j12-playoffs/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j12-playoffs/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$220</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 13 Playoffs</div>
+    <div class="desc">2023</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j13-playoffs/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j13-playoffs/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j13-playoffs/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j13-playoffs/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$220</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44'>
+    <div class="title">Jordan 4 Red Thunder</div>
+    <div class="desc">2022</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j4-red-thunder/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-red-thunder/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-red-thunder/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j4-red-thunder/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$300</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Jordan' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Jordan 1 High Pine Green</div>
+    <div class="desc">2020</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/jordan/j1-high-pine-green/1_1.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-pine-green/1_2.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-pine-green/1_3.jpg" class="sneaker_img">
+            <img src="images/jordan/j1-high-pine-green/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$300</div><button class="button">Add to cart</button></div>
+</div>
+
+                        <!-- 🟣 LOUIS VUITTON (3) -->
+            <div class='shop-card' data-cat='Louis Vuitton' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Trainer White</div>
+    <div class="desc">LV</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/louis-vuitton/lv-trainer-white/1_1.jpg" class="sneaker_img">
+            <img src="images/louis-vuitton/lv-trainer-white/1_2.jpg" class="sneaker_img">
+            <img src="images/louis-vuitton/lv-trainer-white/1_3.jpg" class="sneaker_img">
+            <img src="images/louis-vuitton/lv-trainer-white/2_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1100</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Louis Vuitton' data-sizes='40,41,42,43,44'>
+    <div class="title">LV Skate Black</div>
+    <div class="desc">Skate</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/louis-vuitton/lv-skate-black/1_1.jpg" class="sneaker_img">
+            <img src="images/louis-vuitton/lv-skate-black/1_2.jpg" class="sneaker_img">
+            <img src="images/louis-vuitton/lv-skate-black/1_3.jpg" class="sneaker_img">
+            <img src="images/louis-vuitton/lv-skate-black/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1000</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Louis Vuitton' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Rivoli Sneaker</div>
+    <div class="desc">Rivoli</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/louis-vuitton/lv-rivoli-sneaker/1_1.png" class="sneaker_img">
+            <img src="images/louis-vuitton/lv-rivoli-sneaker/1_2.png" class="sneaker_img">
+            <img src="images/louis-vuitton/lv-rivoli-sneaker/1_3.png" class="sneaker_img">
+            <img src="images/louis-vuitton/lv-rivoli-sneaker/1_4.png" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$950</div><button class="button">Add to cart</button></div>
+</div>
+
+                        <!-- ⚪ DIOR (3) -->
+            <div class='shop-card' data-cat='Dior' data-sizes='40,41,42,43,44'>
+    <div class="title">B23 High Oblique</div>
+    <div class="desc">B23</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/dior/dior-b23-high-oblique/2_1.png" class="sneaker_img">
+            <img src="images/dior/dior-b23-high-oblique/2_2.jpg" class="sneaker_img">
+            <img src="images/dior/dior-b23-high-oblique/2_3.jpg" class="sneaker_img">
+            <img src="images/dior/dior-b23-high-oblique/2_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$1000</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Dior' data-sizes='40,41,42,43,44,45'>
+    <div class="title">B22 White Silver</div>
+    <div class="desc">B22</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/dior/dior-b22-white-silver/1_1.jpg" class="sneaker_img">
+            <img src="images/dior/dior-b22-white-silver/1_2.jpg" class="sneaker_img">
+            <img src="images/dior/dior-b22-white-silver/1_3.jpg" class="sneaker_img">
+            <img src="images/dior/dior-b22-white-silver/2_4.webp" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$900</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Dior' data-sizes='40,41,42,43,44'>
+    <div class="title">B30 Grey</div>
+    <div class="desc">B30</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/dior/dior-b30-grey/1_1.jpeg" class="sneaker_img">
+            <img src="images/dior/dior-b30-grey/1_2.jpeg" class="sneaker_img">
+            <img src="images/dior/dior-b30-grey/2_3.jpeg" class="sneaker_img">
+            <img src="images/dior/dior-b30-grey/2_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$950</div><button class="button">Add to cart</button></div>
+</div>
+
+                        <!-- 🟢 GUCCI (10) -->
+            <div class='shop-card' data-cat='Gucci' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Ace Bee</div>
+    <div class="desc">Bee</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/gucci/gucci-ace-bee/1_1.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-ace-bee/1_2.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-ace-bee/1_3.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-ace-bee/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$750</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Gucci' data-sizes='40,41,42,43,44'>
+    <div class="title">Rhyton Logo</div>
+    <div class="desc">Rhyton</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/gucci/gucci-rhyton-logo/1_1.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-rhyton-logo/2_2.png" class="sneaker_img">
+            <img src="images/gucci/gucci-rhyton-logo/2_3.png" class="sneaker_img">
+            <img src="images/gucci/gucci-rhyton-logo/3_4.png" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$850</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Gucci' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Screener Distressed</div>
+    <div class="desc">Screener</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/gucci/gucci-screener/2_1.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-screener/2_2.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-screener/3_3.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-screener/3_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$790</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Gucci' data-sizes='40,41,42,43,44'>
+    <div class="title">Basket White</div>
+    <div class="desc">Basket</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/gucci/gucci-basket-white/1_1.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-basket-white/1_2.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-basket-white/1_3.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-basket-white/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$700</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Gucci' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Tennis 1977 High</div>
+    <div class="desc">Tennis</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/gucci/gucci-tennis-1977/1_1.jpeg" class="sneaker_img">
+            <img src="images/gucci/gucci-tennis-1977/1_2.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-tennis-1977/1_3.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-tennis-1977/2_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$750</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Gucci' data-sizes='40,41,42,43,44'>
+    <div class="title">Ace Snake</div>
+    <div class="desc">Snake</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/gucci/gucci-ace-snake/1_1.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-ace-snake/1_2.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-ace-snake/1_3.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-ace-snake/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$790</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Gucci' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Run Sneaker</div>
+    <div class="desc">Run</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/gucci/gucci-run-sneaker/1_1.jpeg" class="sneaker_img">
+            <img src="images/gucci/gucci-run-sneaker/1_2.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-run-sneaker/1_3.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-run-sneaker/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$850</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Gucci' data-sizes='40,41,42,43,44'>
+    <div class="title">Ultrapace</div>
+    <div class="desc">Ultra</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/gucci/gucci-ultrapace/1_1.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-ultrapace/1_2.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-ultrapace/1_3.webp" class="sneaker_img">
+            <img src="images/gucci/gucci-ultrapace/1_4.jpeg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$950</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Gucci' data-sizes='40,41,42,43,44,45'>
+    <div class="title">GG High Top</div>
+    <div class="desc">GG</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/gucci/gucci-gg-high-top/1_1.jpeg" class="sneaker_img">
+            <img src="images/gucci/gucci-gg-high-top/1_2.jpeg" class="sneaker_img">
+            <img src="images/gucci/gucci-gg-high-top/1_3.jpeg" class="sneaker_img">
+            <img src="images/gucci/gucci-gg-high-top/1_4.png" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$800</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Gucci' data-sizes='40,41,42,43,44'>
+    <div class="title">Mac80</div>
+    <div class="desc">Mac80</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/gucci/gucci-mac80/1_1.jpeg" class="sneaker_img">
+            <img src="images/gucci/gucci-mac80/1_2.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-mac80/1_3.jpg" class="sneaker_img">
+            <img src="images/gucci/gucci-mac80/2_4.webp" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$750</div><button class="button">Add to cart</button></div>
+</div>
+
+<!-- 🔵 BALENCIAGA (10) -->
+            <div class='shop-card' data-cat='Balenciaga' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Triple S White Grey Black</div>
+    <div class="desc">Classic</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/balenciaga/triple-s-white-grey-black/1_1.jpg" class="sneaker_img">
+            <img src="images/balenciaga/triple-s-white-grey-black/1_2.jpg" class="sneaker_img">
+            <img src="images/balenciaga/triple-s-white-grey-black/1_3.jpg" class="sneaker_img">
+            <img src="images/balenciaga/triple-s-white-grey-black/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$850</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Balenciaga' data-sizes='40,41,42,43,44'>
+    <div class="title">Triple S All Black</div>
+    <div class="desc">Black</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/balenciaga/triple-s-black/1_1.jpg" class="sneaker_img">
+            <img src="images/balenciaga/triple-s-black/1_2.jpg" class="sneaker_img">
+            <img src="images/balenciaga/triple-s-black/1_3.jpg" class="sneaker_img">
+            <img src="images/balenciaga/triple-s-black/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$850</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Balenciaga' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Track 2 Black White</div>
+    <div class="desc">Track</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/balenciaga/track-2-black-white/1_1.jpg" class="sneaker_img">
+            <img src="images/balenciaga/track-2-black-white/1_2.jpg" class="sneaker_img">
+            <img src="images/balenciaga/track-2-black-white/1_3.jpg" class="sneaker_img">
+            <img src="images/balenciaga/track-2-black-white/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$795</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Balenciaga' data-sizes='40,41,42,43,44'>
+    <div class="title">Track 2 Grey Red</div>
+    <div class="desc">Track</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/balenciaga/track-2-grey-red/1_1.jpg" class="sneaker_img">
+            <img src="images/balenciaga/track-2-grey-red/1_2.jpg" class="sneaker_img">
+            <img src="images/balenciaga/track-2-grey-red/1_3.jpg" class="sneaker_img">
+            <img src="images/balenciaga/track-2-grey-red/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$795</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Balenciaga' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Speed 2.0 Black White</div>
+    <div class="desc">Speed</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/balenciaga/speed-2-black-white/1_1.jpg" class="sneaker_img">
+            <img src="images/balenciaga/speed-2-black-white/1_2.jpg" class="sneaker_img">
+            <img src="images/balenciaga/speed-2-black-white/1_3.jpg" class="sneaker_img">
+            <img src="images/balenciaga/speed-2-black-white/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$695</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Balenciaga' data-sizes='40,41,42,43,44'>
+    <div class="title">Speed Trainer All Red</div>
+    <div class="desc">Red</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/balenciaga/speed-trainer-red/1_1.jpg" class="sneaker_img">
+            <img src="images/balenciaga/speed-trainer-red/1_2.jpg" class="sneaker_img">
+            <img src="images/balenciaga/speed-trainer-red/1_3.jpg" class="sneaker_img">
+            <img src="images/balenciaga/speed-trainer-red/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$695</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Balenciaga' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Runner Black White</div>
+    <div class="desc">Runner</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/balenciaga/runner-black-white/1_1.jpg" class="sneaker_img">
+            <img src="images/balenciaga/runner-black-white/1_2.jpg" class="sneaker_img">
+            <img src="images/balenciaga/runner-black-white/1_3.jpg" class="sneaker_img">
+            <img src="images/balenciaga/runner-black-white/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$795</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Balenciaga' data-sizes='40,41,42,43,44'>
+    <div class="title">Defender Black</div>
+    <div class="desc">Defender</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/balenciaga/defender-black/1_1.jpg" class="sneaker_img">
+            <img src="images/balenciaga/defender-black/1_2.jpg" class="sneaker_img">
+            <img src="images/balenciaga/defender-black/1_3.jpg" class="sneaker_img">
+            <img src="images/balenciaga/defender-black/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$745</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Balenciaga' data-sizes='40,41,42,43,44,45'>
+    <div class="title">Defender White Silver</div>
+    <div class="desc">Defender</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/balenciaga/defender-white-silver/1_1.jpg" class="sneaker_img">
+            <img src="images/balenciaga/defender-white-silver/1_2.jpg" class="sneaker_img">
+            <img src="images/balenciaga/defender-white-silver/1_3.jpg" class="sneaker_img">
+            <img src="images/balenciaga/defender-white-silver/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$745</div><button class="button">Add to cart</button></div>
+</div>
+
+<div class='shop-card' data-cat='Balenciaga' data-sizes='40,41,42,43,44'>
+    <div class="title">Steroid High White Black</div>
+    <div class="desc">High</div>
+    <div class="product">
+        <div class="slides">
+            <img src="images/balenciaga/steroid-high-white-black/1_1.jpg" class="sneaker_img">
+            <img src="images/balenciaga/steroid-high-white-black/1_2.jpg" class="sneaker_img">
+            <img src="images/balenciaga/steroid-high-white-black/1_3.jpg" class="sneaker_img">
+            <img src="images/balenciaga/steroid-high-white-black/1_4.jpg" class="sneaker_img">
+        </div>
+    </div>
+    <div class='cta'><div class="price">$845</div><button class="button">Add to cart</button></div>
+</div>
+        </div>
+    </div>
+
+    <article class="blog">
+        <h2 class="hatter"><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="masikoldal">prónyó kicks</a> <i class="fas fa-caret-right"></i></h2>
+    </article>
+
+</body>
+</html>
