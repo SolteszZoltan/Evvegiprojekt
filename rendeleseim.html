@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendeléseim – Prónyó Kicks</title>
+    <link rel="stylesheet" href="cipok.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700;900&family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="auth.js" defer></script>
+    <script src="cookie-consent.js" defer></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: #f0f0f0;
+            font-family: 'Open Sans', sans-serif;
+            min-height: 100vh;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, #1a2535 0%, #22313F 100%);
+            padding: 135px 40px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            width: 500px; height: 500px;
+            border-radius: 50%;
+            background: rgba(248,216,0,0.05);
+            top: -200px; right: -100px;
+            pointer-events: none;
+        }
+        .page-hero-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .page-hero-title span { color: #F8D800; }
+        .page-hero-sub {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 8px;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .orders-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .order-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .order-card:hover {
+            box-shadow: 0 10px 32px rgba(0,0,0,0.13);
+            transform: translateY(-2px);
+        }
+
+        .order-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            background: #1a2535;
+            cursor: pointer;
+            user-select: none;
+        }
+        .order-id {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            font-weight: 700;
+            color: #F8D800;
+            letter-spacing: 1px;
+        }
+        .order-date {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            color: rgba(255,255,255,0.4);
+            margin-top: 3px;
+        }
+        .order-header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .order-total {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 700;
+            font-size: 15px;
+            color: #fff;
+        }
+        .status-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        .status-chip.uj       { background: rgba(91,155,213,0.2);  color: #5b9bd5; border: 1px solid rgba(91,155,213,0.3); }
+        .status-chip.feldolg  { background: rgba(248,216,0,0.15);  color: #F8D800; border: 1px solid rgba(248,216,0,0.3); }
+        .status-chip.kiszall  { background: rgba(46,204,113,0.15); color: #2ecc71; border: 1px solid rgba(46,204,113,0.3); }
+        .status-chip.keses    { background: rgba(224,87,79,0.15);  color: #e0574f; border: 1px solid rgba(224,87,79,0.3); }
+
+        .order-chevron {
+            color: rgba(255,255,255,0.4);
+            font-size: 12px;
+            transition: transform 0.25s;
+        }
+        .order-card.open .order-chevron { transform: rotate(180deg); }
+
+        .order-body {
+            display: none;
+            padding: 20px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+        .order-card.open .order-body { display: block; }
+
+        .order-section-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(0,0,0,0.35);
+            margin-bottom: 10px;
+            margin-top: 16px;
+        }
+        .order-section-title:first-child { margin-top: 0; }
+
+        .order-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 24px;
+        }
+        .order-info-row {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .order-info-label {
+            font-size: 10px;
+            color: rgba(0,0,0,0.35);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        .order-info-value {
+            font-size: 13px;
+            color: #1a2535;
+            font-weight: 600;
+        }
+
+        .order-items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 4px;
+        }
+        .order-items-table th {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: rgba(0,0,0,0.4);
+            padding: 6px 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .order-items-table td {
+            padding: 10px 10px;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: #1a2535;
+        }
+        .order-items-table tr:last-child td { border-bottom: none; }
+        .order-items-table tbody tr:hover td { background: rgba(40,64,107,0.03); }
+
+        .order-total-row {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 16px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+        .order-total-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+            color: rgba(0,0,0,0.5);
+        }
+        .order-total-val {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 900;
+            font-size: 18px;
+            color: #28406b;
+        }
+
+        /* Status timeline */
+        .status-timeline {
+            display: flex;
+            gap: 0;
+            margin-top: 4px;
+            position: relative;
+        }
+        .status-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        .status-step::before {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: rgba(0,0,0,0.1);
+            z-index: 0;
+        }
+        .status-step:last-child::before { display: none; }
+        .status-step-dot {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            margin: 0 auto 6px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s;
+        }
+        .status-step.active .status-step-dot {
+            background: #F8D800;
+            box-shadow: 0 0 0 4px rgba(248,216,0,0.2);
+        }
+        .status-step.done .status-step-dot {
+            background: #2ecc71;
+            box-shadow: 0 0 0 4px rgba(46,204,113,0.15);
+        }
+        .status-step-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 9px;
+            color: rgba(0,0,0,0.4);
+            letter-spacing: 0.5px;
+        }
+        .status-step.active .status-step-label { color: #c8a800; font-weight: 700; }
+        .status-step.done .status-step-label { color: #27ae60; font-weight: 700; }
+
+        /* Empty / Login states */
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .empty-state-icon { font-size: 64px; margin-bottom: 20px; opacity: 0.35; }
+        .empty-state-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a2535;
+            margin-bottom: 10px;
+        }
+        .empty-state-sub { color: rgba(0,0,0,0.4); font-size: 14px; margin-bottom: 24px; }
+        .empty-state-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: #28406b;
+            color: #fff;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 700;
+            font-size: 13px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .empty-state-btn:hover { background: #F8D800; color: #000; transform: translateY(-2px); }
+
+        /* Live refresh indicator */
+        .refresh-bar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .refresh-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: #2ecc71;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .refresh-label {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            color: rgba(0,0,0,0.35);
+        }
+
+        @media (max-width: 600px) {
+            .order-info-grid { grid-template-columns: 1fr; }
+            .page-hero-title { font-size: 1.5rem; }
+            .order-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .order-header-right { width: 100%; justify-content: space-between; }
+        }
+    </style>
+</head>
+<body>
+    <div class='navbar'>
+        <div class='logo'>
+            <a href="index.html"><img src="logo.png" alt="logo" class="hatter"></a>
+        </div>
+        <div class='account-container'></div>
+        <a href="kosar.html" class='cart-container'>
+            <i class="fa fa-shopping-cart"></i>
+            <div class='cart-desc'><span class="kosar">🛒 <span id="cart-count">0</span> Kosár</span></div>
+        </a>
+    </div>
+
+    <div class="page-hero">
+        <div class="page-hero-title">📦 Rendeléseim</div>
+        <div class="page-hero-sub">// leadott megrendelések</div>
+    </div>
+
+    <div class="container" id="main-container">
+        <div id="orders-content"></div>
+    </div>
+
+    <script>
+        const STATUS_ORDER = ['Új', 'Feldolgozás', 'Kiszállítva'];
+        const STATUS_CLASS = { 'Új': 'uj', 'Feldolgozás': 'feldolg', 'Kiszállítva': 'kiszall', 'Késedelmes': 'keses' };
+        const STATUS_ICON  = { 'Új': '🆕', 'Feldolgozás': '⚙️', 'Kiszállítva': '✅', 'Késedelmes': '⚠️' };
+        const STATUS_STEPS = [
+            { key: 'Új',          icon: '🆕', label: 'Új' },
+            { key: 'Feldolgozás', icon: '⚙️', label: 'Feldolgozás' },
+            { key: 'Kiszállítva', icon: '📦', label: 'Kiszállítva' },
+        ];
+
+        function getCurrentUser() {
+            return JSON.parse(localStorage.getItem('pronyo_current_user') || 'null');
+        }
+
+        function getUserOrders(userEmail) {
+            const all = JSON.parse(localStorage.getItem('pronyo_orders') || '[]');
+            return all.filter(o => o.email === userEmail);
+        }
+
+        function statusTimeline(currentStatus) {
+            const currentIdx = STATUS_STEPS.findIndex(s => s.key === currentStatus);
+            if (currentStatus === 'Késedelmes') {
+                return `<div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#e0574f;background:rgba(224,87,79,0.08);border:1px solid rgba(224,87,79,0.2);border-radius:8px;padding:10px 14px;display:inline-flex;align-items:center;gap:8px;">
+                    ⚠️ Rendelés késedelmes – ügyfélszolgálatunk hamarosan felveszi Önnel a kapcsolatot.
+                </div>`;
+            }
+            return `<div class="status-timeline">` + STATUS_STEPS.map((step, i) => {
+                const isDone   = i < currentIdx;
+                const isActive = i === currentIdx;
+                return `<div class="status-step ${isDone ? 'done' : isActive ? 'active' : ''}">
+                    <div class="status-step-dot">${step.icon}</div>
+                    <div class="status-step-label">${step.label}</div>
+                </div>`;
+            }).join('') + `</div>`;
+        }
+
+        function renderOrders() {
+            const user = getCurrentUser();
+            const container = document.getElementById('orders-content');
+
+            if (!user) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🔐</div>
+                        <div class="empty-state-title">Bejelentkezés szükséges</div>
+                        <div class="empty-state-sub">A rendeléseid megtekintéséhez kérjük, lépj be.</div>
+                        <a href="login.html" class="empty-state-btn"><i class="fas fa-sign-in-alt"></i> Bejelentkezés</a>
+                    </div>`;
+                return;
+            }
+
+            const orders = getUserOrders(user.email);
+
+            if (orders.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📦</div>
+                        <div class="empty-state-title">Még nincs rendelésed</div>
+                        <div class="empty-state-sub">Amikor leadod az első rendelésed, itt fogod látni.</div>
+                        <a href="index.html" class="empty-state-btn"><i class="fas fa-shoe-prints"></i> Cipők böngészése</a>
+                    </div>`;
+                return;
+            }
+
+            const listHTML = orders.map((o, idx) => {
+                const itemRows = (o.items || []).map(item => `
+                    <tr>
+                        <td>${item.name || '-'}</td>
+                        <td>${item.size || '-'}</td>
+                        <td>${item.qty || 1} db</td>
+                        <td style="text-align:right;font-family:'IBM Plex Mono',monospace;font-weight:700">${(item.price||0).toLocaleString('hu-HU')} Ft</td>
+                    </tr>`).join('');
+
+                return `
+                <div class="order-card" id="order-${o.id}">
+                    <div class="order-header" onclick="toggleOrder('${o.id}')">
+                        <div>
+                            <div class="order-id">#${o.id}</div>
+                            <div class="order-date">${o.date || ''}</div>
+                        </div>
+                        <div class="order-header-right">
+                            <span class="status-chip ${STATUS_CLASS[o.status] || 'uj'}">${STATUS_ICON[o.status] || ''} ${o.status || 'Új'}</span>
+                            <div class="order-total">${(o.total||0).toLocaleString('hu-HU')} Ft</div>
+                            <i class="fas fa-chevron-down order-chevron"></i>
+                        </div>
+                    </div>
+                    <div class="order-body">
+                        <div class="order-section-title">Rendelés állapota</div>
+                        ${statusTimeline(o.status)}
+
+                        <div class="order-section-title">Rendelt termékek</div>
+                        <table class="order-items-table">
+                            <thead>
+                                <tr>
+                                    <th>Termék</th>
+                                    <th>Méret</th>
+                                    <th>Db</th>
+                                    <th style="text-align:right">Ár</th>
+                                </tr>
+                            </thead>
+                            <tbody>${itemRows}</tbody>
+                        </table>
+                        <div class="order-total-row">
+                            <span class="order-total-label">Szállítás: ${(o.szallitas_koltseg||0).toLocaleString('hu-HU')} Ft</span>
+                            <span class="order-total-label">Összesen:</span>
+                            <span class="order-total-val">${(o.total||0).toLocaleString('hu-HU')} Ft</span>
+                        </div>
+
+                        <div class="order-section-title">Szállítási adatok</div>
+                        <div class="order-info-grid">
+                            <div class="order-info-row">
+                                <span class="order-info-label">Szállítási mód</span>
+                                <span class="order-info-value">${o.szallitas || '-'}</span>
+                            </div>
+                            <div class="order-info-row">
+                                <span class="order-info-label">Fizetési mód</span>
+                                <span class="order-info-value">${o.fizetes || '-'}</span>
+                            </div>
+                            <div class="order-info-row">
+                                <span class="order-info-label">Cím</span>
+                                <span class="order-info-value">${o.cim || '-'}</span>
+                            </div>
+                            ${o.megjegyzes ? `<div class="order-info-row">
+                                <span class="order-info-label">Megjegyzés</span>
+                                <span class="order-info-value">${o.megjegyzes}</span>
+                            </div>` : ''}
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+
+            container.innerHTML = `
+                <div class="refresh-bar">
+                    <div class="refresh-dot"></div>
+                    <span class="refresh-label">Élő frissítés aktív</span>
+                </div>
+                <div class="orders-list">${listHTML}</div>`;
+
+            // Auto-expand first order
+            if (orders.length > 0) {
+                document.getElementById('order-' + orders[0].id)?.classList.add('open');
+            }
+        }
+
+        window.toggleOrder = function(id) {
+            const card = document.getElementById('order-' + id);
+            card?.classList.toggle('open');
+        };
+
+        // Live refresh - watch for localStorage changes (admin changes status)
+        document.addEventListener('DOMContentLoaded', function () {
+            renderOrders();
+
+            // Poll every 3 seconds for status changes from admin panel
+            setInterval(() => {
+                const user = getCurrentUser();
+                if (!user) return;
+                renderOrders();
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

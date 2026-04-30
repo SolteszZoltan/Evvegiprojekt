@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kedvenceim – Prónyó Kicks</title>
+    <link rel="stylesheet" href="cipok.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700;900&family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="auth.js" defer></script>
+    <script src="favorites.js" defer></script>
+    <script src="cookie-consent.js" defer></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: #f0f0f0;
+            font-family: 'Open Sans', sans-serif;
+            min-height: 100vh;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, #1a2535 0%, #22313F 100%);
+            padding: 135px 40px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            width: 500px; height: 500px;
+            border-radius: 50%;
+            background: rgba(248,216,0,0.06);
+            top: -200px; right: -100px;
+            pointer-events: none;
+        }
+        .page-hero-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .page-hero-title span { color: #F8D800; }
+        .page-hero-sub {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 8px;
+            letter-spacing: 1px;
+        }
+        .page-hero-count {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(248,216,0,0.12);
+            border: 1px solid rgba(248,216,0,0.3);
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 12px;
+            color: #F8D800;
+            margin-top: 16px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .fav-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .fav-card {
+            width: calc(25% - 9px);
+            min-width: 200px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .fav-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0,0,0,0.18);
+        }
+        .fav-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            background: #f5f5f5;
+            padding: 16px;
+        }
+        .fav-card-body {
+            padding: 14px 16px 16px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .fav-card-brand {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(0,0,0,0.4);
+            margin-bottom: 4px;
+        }
+        .fav-card-title {
+            font-weight: 900;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #28406b;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+        .fav-card-price {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 700;
+            font-size: 16px;
+            color: #1a2535;
+            margin-top: auto;
+            margin-bottom: 10px;
+        }
+        .fav-card-actions {
+            display: flex;
+            gap: 8px;
+        }
+        .fav-card-add {
+            flex: 1;
+            padding: 9px 14px;
+            background: #28406b;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .fav-card-add:hover { background: #F8D800; color: #000; }
+        .fav-card-remove {
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            border: 1px solid rgba(220,50,50,0.3);
+            background: rgba(220,50,50,0.08);
+            color: #e0574f;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .fav-card-remove:hover { background: rgba(220,50,50,0.2); border-color: #e0574f; }
+
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            width: 100%;
+        }
+        .empty-state-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            opacity: 0.4;
+        }
+        .empty-state-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a2535;
+            margin-bottom: 10px;
+        }
+        .empty-state-sub {
+            color: rgba(0,0,0,0.4);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .empty-state-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: #28406b;
+            color: #fff;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .empty-state-btn:hover { background: #F8D800; color: #000; transform: translateY(-2px); }
+
+        .login-wall {
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .login-wall-icon { font-size: 56px; margin-bottom: 20px; }
+        .login-wall-title {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #1a2535;
+            margin-bottom: 10px;
+        }
+        .login-wall-sub { color: rgba(0,0,0,0.5); margin-bottom: 24px; font-size: 14px; }
+        .login-wall-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 32px;
+            background: #F8D800;
+            color: #000;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 900;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .login-wall-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(248,216,0,0.4); }
+
+        @media (max-width: 900px) {
+            .fav-card { width: calc(50% - 6px); }
+        }
+        @media (max-width: 520px) {
+            .fav-card { width: 100%; }
+            .page-hero-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class='navbar'>
+        <div class='logo'>
+            <a href="index.html"><img src="logo.png" alt="logo" class="hatter"></a>
+        </div>
+        <div class='account-container'></div>
+        <a href="kosar.html" class='cart-container'>
+            <i class="fa fa-shopping-cart"></i>
+            <div class='cart-desc'><span class="kosar">🛒 <span id="cart-count">0</span> Kosár</span></div>
+        </a>
+    </div>
+
+    <div class="page-hero">
+        <div class="page-hero-title">❤️ Kedvenceim</div>
+        <div class="page-hero-sub">// mentett cipők</div>
+        <div class="page-hero-count" id="fav-count-badge">
+            <i class="fas fa-heart"></i>
+            <span id="fav-count-num">0</span> cipő mentve
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="fav-grid" id="fav-grid"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const user = JSON.parse(localStorage.getItem('pronyo_current_user') || 'null');
+            const grid = document.getElementById('fav-grid');
+            const countNum = document.getElementById('fav-count-num');
+
+            if (!user) {
+                grid.innerHTML = `
+                    <div class="login-wall" style="width:100%">
+                        <div class="login-wall-icon">🔐</div>
+                        <div class="login-wall-title">Jelentkezz be a kedvenceid megtekintéséhez</div>
+                        <div class="login-wall-sub">A kedvenceid csak bejelentkezés után érhetők el.</div>
+                        <a href="login.html" class="login-wall-btn">
+                            <i class="fas fa-sign-in-alt"></i> Bejelentkezés
+                        </a>
+                    </div>
+                `;
+                return;
+            }
+
+            renderFavorites();
+
+            function renderFavorites() {
+                const favs = JSON.parse(localStorage.getItem('pronyo_favorites') || '[]');
+                countNum.textContent = favs.length;
+
+                if (favs.length === 0) {
+                    grid.innerHTML = `
+                        <div class="empty-state">
+                            <div class="empty-state-icon">🤍</div>
+                            <div class="empty-state-title">Még nincs kedvenced</div>
+                            <div class="empty-state-sub">Böngéssz a cipőink között és nyomj a ❤️ gombra!</div>
+                            <a href="index.html" class="empty-state-btn">
+                                <i class="fas fa-shoe-prints"></i> Cipők böngészése
+                            </a>
+                        </div>
+                    `;
+                    return;
+                }
+
+                grid.innerHTML = favs.map(shoe => `
+                    <div class="fav-card" data-id="${shoe.id}">
+                        <img class="fav-card-img" src="${shoe.img || ''}" alt="${shoe.title}" onerror="this.style.opacity='0.2'">
+                        <div class="fav-card-body">
+                            <div class="fav-card-brand">${shoe.brand || ''}</div>
+                            <div class="fav-card-title">${shoe.title}</div>
+                            <div class="fav-card-price">${shoe.price || ''}</div>
+                            <div class="fav-card-actions">
+                                <button class="fav-card-add" onclick="addToCart('${shoe.id}')">
+                                    🛒 Kosárba
+                                </button>
+                                <button class="fav-card-remove" title="Eltávolítás" onclick="removeFavorite('${shoe.id}')">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            window.removeFavorite = function(id) {
+                let favs = JSON.parse(localStorage.getItem('pronyo_favorites') || '[]');
+                favs = favs.filter(f => f.id !== id);
+                localStorage.setItem('pronyo_favorites', JSON.stringify(favs));
+                renderFavorites();
+            };
+
+            window.addToCart = function(id) {
+                const favs = JSON.parse(localStorage.getItem('pronyo_favorites') || '[]');
+                const shoe = favs.find(f => f.id === id);
+                if (!shoe) return;
+
+                let cart = JSON.parse(localStorage.getItem('pronyo_cart') || '[]');
+                const existing = cart.find(c => c.name === shoe.title);
+                if (existing) {
+                    existing.quantity = (existing.quantity || 1) + 1;
+                } else {
+                    cart.push({ name: shoe.title, price: parseFloat(shoe.price?.replace(/[^0-9.]/g, '')) || 0, quantity: 1 });
+                }
+                localStorage.setItem('pronyo_cart', JSON.stringify(cart));
+
+                // Update cart count
+                const cartCount = document.getElementById('cart-count');
+                if (cartCount) cartCount.textContent = cart.reduce((s, i) => s + (i.quantity || 1), 0);
+
+                // Toast
+                const toast = document.createElement('div');
+                toast.style.cssText = `position:fixed;bottom:30px;right:30px;background:#1a2535;color:#fff;padding:12px 20px;border-radius:12px;font-family:'IBM Plex Mono',monospace;font-size:13px;box-shadow:0 8px 30px rgba(0,0,0,.3);z-index:99999;border:1px solid rgba(248,216,0,.2);animation:toastIn .3s cubic-bezier(.34,1.56,.64,1)`;
+                toast.textContent = `✅ "${shoe.title}" kosárba rakva!`;
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 2500);
+            };
+        });
+    </script>
+</body>
+</html>
